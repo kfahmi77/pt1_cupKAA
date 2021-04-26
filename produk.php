@@ -1,25 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="dist/css/main.css">
-  <title> Cup KAA - Online Coffee Shop </title>
-</head>
-<body>
+<?php
+require_once "view/header.php";
+?>
 
-    <div class="header flex">
-      <a href=""><img class="logo" src="dist/img/coffee-2358388_1920.jpg" alt=""></a>
-      <ul class="navbar flex">
-        <li><a href="" class="link"> Beranda </a></li>
-        <li><a href="" class="link"> Produk </a></li>
-        <li><a href="" class="link"> Tentang </a></li>
-        <li><a href="" class="link"> Kontak </a></li>
-      </ul>
-    </div>
-
-  <div class="main-container">
+<div class="main-container">
     <div class="flex main">
       <div class="product">
         <img src="dist/img/coffee-mugs-1727056_1920.jpg" alt="" class="thumbnail">
@@ -36,9 +19,11 @@
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos molestias voluptates omnis repudiandae illum cum debitis quia, praesentium autem, saepe aliquid alias accusantium repellat. Dicta aut quas architecto voluptatibus distinctio!</p>
         <br>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fugit harum tempore temporibus, autem aut odit architecto deleniti sunt fugiat aperiam totam repellendus dolorum perferendis modi minus adipisci eveniet corrupti!</p>
+        <br>
+        <h3>Rp. 15.000</h3>
         <div class="buy flex">
           <a href="" class="buy-link link"> <span class="center">Masukan Keranjang</span> </a>
-          <a href="" class="buy-link link"> <span class="center">Langsung Beli</span></a>
+          <a href="" class="buy-link link"> <span class="center">Beli Langsung</span></a>
         </div>
       </div>
     
@@ -92,10 +77,6 @@
   </div>
 
 
-  <div class="footer flex">
-    <p> Footer </p>
-  </div>
-
-  
-</body>
-</html>
+<?php
+require_once "view/footer.php";
+?>

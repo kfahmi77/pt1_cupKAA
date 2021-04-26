@@ -3,6 +3,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 a,
@@ -14,6 +15,10 @@ li {
 
 img {
   max-width: 100%;
+}
+
+p {
+  line-height: 1.65;
 }
 
 .main-container {
@@ -136,8 +141,8 @@ table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-preferred-size: 40%;
-      flex-basis: 40%;
+  -ms-flex-preferred-size: 45%;
+      flex-basis: 45%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -149,10 +154,21 @@ table {
 
 .main .cart {
   grid-area: cart;
-  -ms-flex-preferred-size: 28%;
-      flex-basis: 28%;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
   background-color: #cc9166;
   color: white;
+}
+
+.main .cart h2 {
+  margin: auto;
+  margin-bottom: 0.5rem;
+  border-bottom: 0.2rem solid white;
+}
+
+.main .cart table,
+.main .cart h3 {
+  margin: 1rem 0;
 }
 
 .main .cart .link {
@@ -162,6 +178,10 @@ table {
 
 .review {
   grid-area: review;
+}
+
+.review .link {
+  margin-top: 2rem;
 }
 
 .review h1 {
@@ -178,6 +198,103 @@ table {
   -ms-flex-preferred-size: 30%;
       flex-basis: 30%;
   border-color: #714f38;
+}
+
+.tentang {
+  width: 80%;
+  margin: 0 auto;
+  color: #714f38;
+}
+
+.tentang > * {
+  margin: auto;
+}
+
+.tentang .title {
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  font-weight: lighter;
+}
+
+.tentang .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+  -ms-grid-rows: (1fr)[8];
+      grid-template-rows: repeat(8, 1fr);
+}
+
+.tentang .desc {
+  padding: 2rem;
+  border: 0.8rem solid #714f38;
+  border-radius: 20px;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 7;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-area: 1 / 1 / 8 / 7;
+}
+
+.tentang .desc h2 {
+  margin-bottom: 2.5rem;
+  font-size: 1.8rem;
+  font-weight: lighter;
+}
+
+.tentang .desc p {
+  width: 80%;
+  color: black;
+  text-align: justify;
+  margin-bottom: 2rem;
+}
+
+.tentang .img {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 5;
+  -ms-grid-column: 6;
+  -ms-grid-column-span: 6;
+  grid-area: 2 / 6 / 7 / 12;
+}
+
+.kontak {
+  width: 80%;
+  margin: 0 auto;
+  color: #714f38;
+}
+
+.kontak > * {
+  margin: auto;
+}
+
+.kontak .title {
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  font-weight: lighter;
+}
+
+.identitas {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.identitas .img {
+  -ms-flex-preferred-size: 48%;
+      flex-basis: 48%;
+}
+
+.identitas .desc {
+  color: black;
+  -ms-flex-preferred-size: 48%;
+      flex-basis: 48%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .footer {
