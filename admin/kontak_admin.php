@@ -1,5 +1,5 @@
 <?php
-require_once "view/header.php";
+require_once "../view/header_admin.php";
 ?>
 
 <div class="flex kontak">
@@ -10,7 +10,7 @@ require_once "view/header.php";
     <h1 class="subtitle"> Owner Kopi Abah Ambu </h1>
     <div class="card flex identitas">
       <div class="img">
-        <img src="dist/img/coffee-1711431_1920.jpg" alt="">
+        <img src="../dist/img/coffee-1711431_1920.jpg" alt="">
       </div>
 
       <div class="desc">
@@ -21,17 +21,18 @@ require_once "view/header.php";
         </p>
 
         <div class="sosmed flex">
-          <span class="icon"><img src="dist/icon/line-ori.png" alt=""></span> 
+          <span class="icon"><img src="../dist/icon/line-ori.png" alt=""></span> 
           <a href="" class="link-sosmed">IdLIne.com</a>
         </div>
         <div class="sosmed flex">
-          <span class="icon"><img src="dist/icon/instagram.png" alt=""></span> 
+          <span class="icon"><img src="../dist/icon/instagram.png" alt=""></span> 
           <a href="" class="link-sosmed">instagram.com</a>
         </div>
         <div class="sosmed flex">
-          <span class="icon"><img src="dist/icon/wa-ori.png" alt=""></span> 
+          <span class="icon"><img src="../dist/icon/wa-ori.png" alt=""></span> 
           <a href="" class="link-sosmed">WhatsApp.com</a>
         </div>
+        <a href="admin_edit.php" class="link" style="text-align:center;"> Edit </a>
       </div>
     </div>
   </div>
@@ -41,7 +42,7 @@ require_once "view/header.php";
     <h1 class="subtitle"> Developer Cup KAA </h1>
     <div class="card flex identitas">
       <div class="img">
-        <img src="dist/img/coffee-1711431_1920.jpg" alt="">
+        <img src="../dist/img/coffee-1711431_1920.jpg" alt="">
       </div>
 
       <div class="desc">
@@ -52,23 +53,24 @@ require_once "view/header.php";
         </p>
 
         <div class="sosmed flex">
-          <span class="icon"><img src="dist/icon/line-ori.png" alt=""></span> 
+          <span class="icon"><img src="../dist/icon/line-ori.png" alt=""></span> 
           <a href="" class="link-sosmed">IdLIne.com</a>
         </div>
         <div class="sosmed flex">
-          <span class="icon"><img src="dist/icon/instagram.png" alt=""></span> 
+          <span class="icon"><img src="../dist/icon/instagram.png" alt=""></span> 
           <a href="" class="link-sosmed">instagram.com</a>
         </div>
         <div class="sosmed flex">
-          <span class="icon"><img src="dist/icon/wa-ori.png" alt=""></span> 
+          <span class="icon"><img src="../dist/icon/wa-ori.png" alt=""></span> 
           <a href="" class="link-sosmed">WhatsApp.com</a>
         </div>
+        <a href="admin_edit.php" class="link" style="text-align:center;"> Edit </a>
       </div>
     </div>
 
     <div class="card flex identitas">
       <div class="img">
-        <img src="dist/img/coffee-1711431_1920.jpg" alt="">
+        <img src="../dist/img/coffee-1711431_1920.jpg" alt="">
       </div>
 
       <div class="desc">
@@ -79,26 +81,24 @@ require_once "view/header.php";
         </p>
 
         <div class="sosmed flex">
-          <span class="icon"><img src="dist/icon/line-ori.png" alt=""></span> 
+          <span class="icon"><img src="../dist/icon/line-ori.png" alt=""></span> 
           <a href="" class="link-sosmed">IdLIne.com</a>
         </div>
         <div class="sosmed flex">
-          <span class="icon"><img src="dist/icon/instagram.png" alt=""></span> 
+          <span class="icon"><img src="../dist/icon/instagram.png" alt=""></span> 
           <a href="" class="link-sosmed">instagram.com</a>
         </div>
         <div class="sosmed flex">
-          <span class="icon"><img src="dist/icon/wa-ori.png" alt=""></span> 
+          <span class="icon"><img src="../dist/icon/wa-ori.png" alt=""></span> 
           <a href="" class="link-sosmed">WhatsApp.com</a>
         </div>
+        <a href="admin_edit.php" class="link" style="text-align:center;"> Edit </a>
       </div>
     </div>
   </div>
 
-  <!-- <div class="dev">
-    <div class="card"></div>
-  </div> -->
 </div>
 
 <?php
-require_once "view/footer.php";
+require_once "../view/footer_admin.php";
 ?>

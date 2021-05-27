@@ -46,23 +46,8 @@ table {
   flex-wrap: wrap;
 }
 
-.header {
-  grid-area: header;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 3px solid $psecondcolor;
-  margin-bottom: 2rem;
-  .logo {
-    margin-left: 2rem;
-    width: 8rem;
-    border-radius: 1rem;
-  }
-
-  .navbar {
-    display: flex;
-    margin-right: 20px;
-  }
+.grid {
+  display: grid;
 }
 
 .link {
@@ -75,6 +60,68 @@ table {
     background-color: $mainhovercolor;
   }
 }
+
+// akhir deklarasi class umum
+
+// Awal  header.php
+
+.header {
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 3px solid $psecondcolor;
+  margin-bottom: 2rem;
+  .logo {
+    margin-left: 2rem;
+    width: 8rem;
+    border-radius: 1rem;
+  }
+
+  .navbar {
+    display: flex;
+    margin-right: 1rem;
+  }
+}
+
+// akhir header.php
+
+// awal bagian Produklist.php
+
+.produk-list {
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+
+  .produk-item {
+    flex-direction: column;
+    justify-content: space-between;
+    color: $psecondcolor;
+    align-items: center;
+    padding: 1rem auto;
+
+    .thumb {
+      max-height: 10rem;
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: $maincolor;
+      margin: auto;
+      font-weight: lighter;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 0.3rem solid $maincolor;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    a {
+      margin: auto;
+    }
+  }
+}
+
+// akhir produklist.php
+
+// awal produk.php
 
 .main {
   padding-bottom: 5rem;
@@ -119,7 +166,6 @@ table {
         justify-content: center;
         .center {
           margin: auto;
-          // font-size: 0.9rem;
         }
       }
     }
@@ -163,6 +209,79 @@ table {
   }
 }
 
+// akhir halaman produk.php
+
+// awal bagian konfirmasi.php
+
+.konfirmasi {
+  width: 70%;
+  margin: 0 auto;
+  color: $maincolor;
+  flex-direction: column;
+  > * {
+    margin: auto;
+  }
+  .kon-container {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    .cart {
+      flex-basis: 45%;
+      background-color: hsl(25, 50%, 60%);
+      color: $pmaincolor;
+      flex-direction: row;
+
+      h2 {
+        margin: auto;
+        margin-bottom: 0.25rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 0.1rem solid $pmaincolor;
+        font-weight: lighter;
+      }
+      .center {
+        text-align: center;
+      }
+      table,
+      h3 {
+        margin: 1rem 0;
+        font-weight: lighter;
+      }
+      table {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $pmaincolor;
+      }
+      .pengiriman {
+        flex-basis: 100%;
+        margin-bottom: 1rem;
+      }
+    }
+    .form {
+      flex-basis: 50%;
+      flex-direction: column;
+
+      .link {
+        margin: 0;
+      }
+
+      .input {
+        margin-bottom: 2rem;
+        border-radius: 10px;
+        line-height: 1.65;
+        padding: 0.5rem;
+      }
+    }
+  }
+  .title {
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    font-weight: lighter;
+  }
+}
+
+// akhir bagian kofirmasi.php
+
+// awal halaman tentang.php
+
 .tentang {
   width: 80%;
   margin: 0 auto;
@@ -202,6 +321,9 @@ table {
   }
 }
 
+// akhir bagian tentang.php
+
+// awal Bagian KONTAK.php
 .kontak {
   width: 80%;
   margin: 0 auto;
@@ -209,10 +331,39 @@ table {
   > * {
     margin: auto;
   }
-  .title {
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
+  h1,
+  h2,
+  h3 {
     font-weight: lighter;
+  }
+  .title {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+  }
+  .subtitle {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.8rem;
+  }
+  .owner {
+    margin-bottom: 2rem;
+  }
+  .developer {
+    .identitas {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.sosmed {
+  align-items: center;
+  margin: 0.5rem 0;
+  .icon {
+    width: 2.5rem;
+  }
+  .link-sosmed {
+    font-size: 1.2rem;
+    margin: 0 1rem;
   }
 }
 
@@ -222,14 +373,21 @@ table {
     flex-basis: 48%;
   }
   .desc {
-    color: $psecondcolor;
     flex-basis: 48%;
     display: flex;
     flex-direction: column;
-    .icon {
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+    p {
+      color: $psecondcolor;
     }
   }
 }
+
+// akhir bagian kontak.php
+
+// awal bagian footer.php
 
 .footer {
   grid-area: footer;
@@ -243,17 +401,9 @@ table {
   }
 }
 
-// .grid {
-//   display: grid;
-//   height: 100vh;
-//   grid-template-columns: 1fr 2fr 1fr;
-//   grid-gap: 2rem;
-//   grid-template-areas:
-//     "header   header  header"
-//     "product  desc    cart"
-//     "review   review  review"
-//     "footer   footer  footer";
-// }
+// akhir bagian footer.php
+
+// awal bagian screen ukuran 360px
 
 @media only screen and (max-width: 360px) {
 }

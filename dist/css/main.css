@@ -46,15 +46,31 @@ table {
       flex-wrap: wrap;
 }
 
+.grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+.link {
+  color: white;
+  background-color: #714f38;
+  margin: 10px;
+  padding: 15px 30px;
+  border-radius: 10px;
+}
+
+.link:hover {
+  background-color: #a35c29;
+}
+
 .header {
-  grid-area: header;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 10px;
+  padding: 1rem;
   border-bottom: 3px solid black;
   margin-bottom: 2rem;
 }
@@ -69,19 +85,50 @@ table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-right: 20px;
+  margin-right: 1rem;
 }
 
-.link {
-  color: white;
-  background-color: #714f38;
-  margin: 10px;
-  padding: 15px 30px;
-  border-radius: 10px;
+.produk-list {
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
 }
 
-.link:hover {
-  background-color: #a35c29;
+.produk-list .produk-item {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: black;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem auto;
+}
+
+.produk-list .produk-item .thumb {
+  max-height: 10rem;
+  margin-bottom: 2rem;
+}
+
+.produk-list .produk-item h2 {
+  color: #714f38;
+  margin: auto;
+  font-weight: lighter;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.3rem solid #714f38;
+}
+
+.produk-list .produk-item p {
+  margin-bottom: 1rem;
+}
+
+.produk-list .produk-item a {
+  margin: auto;
 }
 
 .main {
@@ -200,6 +247,99 @@ table {
   border-color: #714f38;
 }
 
+.konfirmasi {
+  width: 70%;
+  margin: 0 auto;
+  color: #714f38;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.konfirmasi > * {
+  margin: auto;
+}
+
+.konfirmasi .kon-container {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.konfirmasi .kon-container .cart {
+  -ms-flex-preferred-size: 45%;
+      flex-basis: 45%;
+  background-color: #cc9166;
+  color: white;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.konfirmasi .kon-container .cart h2 {
+  margin: auto;
+  margin-bottom: 0.25rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 0.1rem solid white;
+  font-weight: lighter;
+}
+
+.konfirmasi .kon-container .cart .center {
+  text-align: center;
+}
+
+.konfirmasi .kon-container .cart table,
+.konfirmasi .kon-container .cart h3 {
+  margin: 1rem 0;
+  font-weight: lighter;
+}
+
+.konfirmasi .kon-container .cart table {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid white;
+}
+
+.konfirmasi .kon-container .cart .pengiriman {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin-bottom: 1rem;
+}
+
+.konfirmasi .kon-container .form {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.konfirmasi .kon-container .form .link {
+  margin: 0;
+}
+
+.konfirmasi .kon-container .form .input {
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  line-height: 1.65;
+  padding: 0.5rem;
+}
+
+.konfirmasi .title {
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  font-weight: lighter;
+}
+
 .tentang {
   width: 80%;
   margin: 0 auto;
@@ -267,10 +407,45 @@ table {
   margin: auto;
 }
 
-.kontak .title {
-  margin-bottom: 3rem;
-  font-size: 2.5rem;
+.kontak h1,
+.kontak h2,
+.kontak h3 {
   font-weight: lighter;
+}
+
+.kontak .title {
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.kontak .subtitle {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.kontak .owner {
+  margin-bottom: 2rem;
+}
+
+.kontak .developer .identitas {
+  margin-bottom: 2rem;
+}
+
+.sosmed {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.5rem 0;
+}
+
+.sosmed .icon {
+  width: 2.5rem;
+}
+
+.sosmed .link-sosmed {
+  font-size: 1.2rem;
+  margin: 0 1rem;
 }
 
 .identitas {
@@ -285,7 +460,6 @@ table {
 }
 
 .identitas .desc {
-  color: black;
   -ms-flex-preferred-size: 48%;
       flex-basis: 48%;
   display: -webkit-box;
@@ -295,6 +469,14 @@ table {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.identitas .desc h2 {
+  margin-bottom: 0.5rem;
+}
+
+.identitas .desc p {
+  color: black;
 }
 
 .footer {

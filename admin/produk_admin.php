@@ -1,13 +1,13 @@
 <?php
-require_once "view/header.php";
+require_once "../view/header_admin.php";
 ?>
 
 <div class="main-container">
     <div class="flex main">
-      <div class="product">
-        <img src="dist/img/coffee-mugs-1727056_1920.jpg" alt="" class="thumbnail">
+      <div class="product" style="flex-basis:40%;">
+        <img src="../dist/img/coffee-mugs-1727056_1920.jpg" alt="" class="thumbnail">
       </div>
-      <div class="desc card">
+      <div class="desc card " style="flex-basis:50%;">
         <h2> Nama Produk </h2>
         <h3>Komposisi</h3>
         <ul>
@@ -21,13 +21,12 @@ require_once "view/header.php";
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fugit harum tempore temporibus, autem aut odit architecto deleniti sunt fugiat aperiam totam repellendus dolorum perferendis modi minus adipisci eveniet corrupti!</p>
         <br>
         <h3>Harga : Rp. 15.000</h3>
-        <div class="buy flex">
-          <a href="" class="buy-link link"> <span class="center">Masukan Keranjang</span> </a>
-          <a href="" class="buy-link link"> <span class="center">Beli Langsung</span></a>
-        </div>
+        <br>
+        <a href="admin_edit.php" class="link" style="text-align:center;"> Edit </a>
+
       </div>
     
-      <div class="cart card flex">
+      <!-- <div class="cart card flex">
         <h2>Keranjang</h2>
         <table>
           <tr class="table">
@@ -46,7 +45,7 @@ require_once "view/header.php";
         <br>
         <h3>Jumlah : Rp 15.000</h3><br>
         <a href="konfirmasi.php" class="link"> Konfirmasi Pembelian </a>
-      </div>
+      </div> -->
     
     </div>
 
@@ -78,5 +77,5 @@ require_once "view/header.php";
 
 
 <?php
-require_once "view/footer.php";
+require_once "../view/footer_admin.php";
 ?>

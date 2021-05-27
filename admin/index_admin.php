@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="dist/css/dashboard.css">
+  <link rel="stylesheet" href="../dist/css/dashboard.css">
   <title>Cup KAA</title>
 </head>
 <body>
@@ -15,9 +15,10 @@
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, accusantium a culpa maiores excepturi placeat earum delectus aliquam eaque magnam ullam modi necessitatibus et sunt sed odit nisi. Consequuntur, at.</p>
       <br><br>
       <div class="link-dash">
-        <a href="produklist.php" class="link">Produk</a>
-        <a href="tentang.php" class="link">Tentang</a>
-        <a href="kontak.php" class="link">Kontak</a>
+        <a href="produklist_admin.php" class="link">Produk</a>
+        <a href="tentang_admin.php" class="link">Tentang</a>
+        <a href="kontak_admin.php" class="link">Kontak</a>
+        <a href="index_edit.php" class="link"> Edit </a>
       </div>
     </div>
   </div>
