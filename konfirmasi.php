@@ -41,7 +41,7 @@ require_once "view/header.php";
       <input class="input" type="text" name="nama" placeholder="Nama" required>
       <input class="input" type="text" name="alamat" placeholder="Alamat" required>
       <select class="input" name="pengiriman" id="pengiriman" required>
-        <option ue="langsung">Ambil Langsung</option>
+        <option value="langsung">Ambil Langsung</option>
         <option value="gojek">Gojek</option>
       </select>
       <textarea class="input" type="text" placeholder="Catatan" style="resize: none;"></textarea>

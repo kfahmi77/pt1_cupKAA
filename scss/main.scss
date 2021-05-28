@@ -374,7 +374,7 @@ table {
   }
   .desc {
     flex-basis: 48%;
-    display: flex;
+    // display: flex;
     flex-direction: column;
     h2 {
       margin-bottom: 0.5rem;
@@ -386,6 +386,66 @@ table {
 }
 
 // akhir bagian kontak.php
+
+// awal bagian edit.php
+
+.edit {
+  width: 70%;
+  margin: 0 auto;
+  color: $maincolor;
+  margin-bottom: 3rem;
+  > * {
+    margin: auto;
+  }
+  h1,
+  h2,
+  h3 {
+    font-weight: lighter;
+  }
+  .title {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+  }
+  .img {
+    flex-basis: 48%;
+  }
+  .form {
+    flex-basis: 48%;
+    flex-direction: column;
+    justify-content: center;
+    .link {
+      margin: 0;
+    }
+
+    .input {
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      line-height: 1.65;
+      padding: 0.5rem;
+    }
+  }
+  .edit-container {
+    justify-content: space-between;
+    .form-kontak {
+      justify-content: start;
+      .input {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+// input[type="file"] {
+//   display: none;
+// }
+// .custom-file-upload {
+//   border: 1px solid #ccc;
+//   // display: inline-block;
+//   padding: 2rem 4rem;
+//   cursor: pointer;
+// }
+
+// akhi9r bagian edit.pho
 
 // awal bagian footer.php
 

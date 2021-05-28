@@ -13,7 +13,7 @@ require_once "../view/header_admin.php";
         <img src="../dist/img/coffee-1711431_1920.jpg" alt="">
       </div>
 
-      <div class="desc">
+      <div class="desc flex">
         <h2>Garid Achmad Fachrudin</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae porro amet facilis iusto minima, nemo dolores optio quo ea ullam blanditiis excepturi tempore sit nulla in omnis quis mollitia quasi.
@@ -32,7 +32,7 @@ require_once "../view/header_admin.php";
           <span class="icon"><img src="../dist/icon/wa-ori.png" alt=""></span> 
           <a href="" class="link-sosmed">WhatsApp.com</a>
         </div>
-        <a href="admin_edit.php" class="link" style="text-align:center;"> Edit </a>
+        <a href="kontak_edit.php" class="link" style="text-align:center;"> Edit </a>
       </div>
     </div>
   </div>
@@ -64,7 +64,7 @@ require_once "../view/header_admin.php";
           <span class="icon"><img src="../dist/icon/wa-ori.png" alt=""></span> 
           <a href="" class="link-sosmed">WhatsApp.com</a>
         </div>
-        <a href="admin_edit.php" class="link" style="text-align:center;"> Edit </a>
+        <a href="kontak_edit.php" class="link" style="text-align:center;"> Edit </a>
       </div>
     </div>
 
@@ -92,7 +92,7 @@ require_once "../view/header_admin.php";
           <span class="icon"><img src="../dist/icon/wa-ori.png" alt=""></span> 
           <a href="" class="link-sosmed">WhatsApp.com</a>
         </div>
-        <a href="admin_edit.php" class="link" style="text-align:center;"> Edit </a>
+        <a href="kontak_edit.php" class="link" style="text-align:center;"> Edit </a>
       </div>
     </div>
   </div>

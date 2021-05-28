@@ -9,7 +9,7 @@ require_once "../view/header_admin.php";
         <h2> Kopi Abah Ambu </h2>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui corrupti obcaecati hic earum, voluptates magnam similique quam magni nostrum reiciendis recusandae doloremque fuga suscipit vero possimus, exercitationem, vel consequuntur? Suscipit!</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis perferendis sapiente eum, et voluptates magni repudiandae fuga quos corporis at provident expedita, quas fugiat laudantium dolores suscipit natus quasi placeat.</p>
-        <a href="admin_edit.php" class="link" style="text-align:center;"> Edit </a>
+        <a href="tentang_edit.php" class="link" style="text-align:center;"> Edit </a>
       </div>
 
       <div class="img">

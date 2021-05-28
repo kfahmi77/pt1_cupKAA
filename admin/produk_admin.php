@@ -22,7 +22,7 @@ require_once "../view/header_admin.php";
         <br>
         <h3>Harga : Rp. 15.000</h3>
         <br>
-        <a href="admin_edit.php" class="link" style="text-align:center;"> Edit </a>
+        <a href="produk_edit.php" class="link" style="text-align:center;"> Edit </a>
 
       </div>
     

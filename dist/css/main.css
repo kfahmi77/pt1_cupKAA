@@ -462,9 +462,6 @@ table {
 .identitas .desc {
   -ms-flex-preferred-size: 48%;
       flex-basis: 48%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -477,6 +474,72 @@ table {
 
 .identitas .desc p {
   color: black;
+}
+
+.edit {
+  width: 70%;
+  margin: 0 auto;
+  color: #714f38;
+  margin-bottom: 3rem;
+}
+
+.edit > * {
+  margin: auto;
+}
+
+.edit h1,
+.edit h2,
+.edit h3 {
+  font-weight: lighter;
+}
+
+.edit .title {
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.edit .img {
+  -ms-flex-preferred-size: 48%;
+      flex-basis: 48%;
+}
+
+.edit .form {
+  -ms-flex-preferred-size: 48%;
+      flex-basis: 48%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.edit .form .link {
+  margin: 0;
+}
+
+.edit .form .input {
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  line-height: 1.65;
+  padding: 0.5rem;
+}
+
+.edit .edit-container {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.edit .edit-container .form-kontak {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.edit .edit-container .form-kontak .input {
+  margin-bottom: 1rem;
 }
 
 .footer {
