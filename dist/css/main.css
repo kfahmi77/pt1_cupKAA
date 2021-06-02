@@ -542,6 +542,52 @@ table {
   margin-bottom: 1rem;
 }
 
+.login {
+  width: 70%;
+  margin: 0 auto;
+  color: #714f38;
+  margin-bottom: 3rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.login > * {
+  margin: auto;
+}
+
+.login h1 {
+  font-weight: lighter;
+}
+
+.login .title {
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.login .form {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 70%;
+}
+
+.login .form .link {
+  margin: 0;
+}
+
+.login .form .input {
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  line-height: 1.65;
+  padding: 0.5rem;
+}
+
 .footer {
   grid-area: footer;
   -webkit-box-align: center;

@@ -18,5 +18,6 @@
         <li><a href="produklist_admin.php" class="link"> Produk </a></li>
         <li><a href="tentang_admin.php" class="link"> Tentang </a></li>
         <li><a href="kontak_admin.php" class="link"> Kontak </a></li>
+        <li><a href="../logout.php" class="link"> Logout </a></li>
       </ul>
     </div>

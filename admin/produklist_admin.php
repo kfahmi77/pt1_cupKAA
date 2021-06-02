@@ -3,6 +3,8 @@ require_once "../view/header_admin.php";
 ?>
 
 <div class="main-container">
+  <h3 style="font-weight:lighter; margin: 0 auto; width: 100%;"> <a href="produklist_edit.php" class="link">Tambah Produk Baru</a> </h3>
+  <br><br>
   <div class="grid produk-list">
     <div class="produk-item card flex">
       <img class="thumb" src="../dist/img/coffee-mugs-1727056_1920.jpg" alt="">
