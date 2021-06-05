@@ -1,31 +1,33 @@
 <?php
 require_once "../view/header_admin.php";
+include '../script/koneksi.php';
 ?>
 
 <div class="main-container">
+  <?php
+  $id = $_GET['idproduk'];
+  $ambildata = mysqli_query($conn, "SELECT idproduk,namaproduk,namajenis,deskripsi,harga,gambar FROM produk JOIN jenis_produk ON produk.jenisproduk=jenis_produk.idjenis WHERE idproduk='$id'");
+  while ($row = mysqli_fetch_array($ambildata)) {
+  ?>
     <div class="flex main">
       <div class="product" style="flex-basis:40%;">
-        <img src="../dist/img/coffee-mugs-1727056_1920.jpg" alt="" class="thumbnail">
+        <img src="../dist/img/gambar_produk/<?php echo $row['gambar']; ?>" alt="" class="thumbnail">
       </div>
       <div class="desc card " style="flex-basis:50%;">
         <h2> Nama Produk </h2>
         <h3>Komposisi</h3>
         <ul>
-          <li> Jenis </li>
-          <li> Rasa </li>
-          <li> Unikan </li>
+          <li> <?php echo $row['namajenis']; ?> </li>
         </ul>
         <h3>Deskripsi</h3>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos molestias voluptates omnis repudiandae illum cum debitis quia, praesentium autem, saepe aliquid alias accusantium repellat. Dicta aut quas architecto voluptatibus distinctio!</p>
+        <p><?php echo $row['deskripsi']; ?></p>
         <br>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fugit harum tempore temporibus, autem aut odit architecto deleniti sunt fugiat aperiam totam repellendus dolorum perferendis modi minus adipisci eveniet corrupti!</p>
+        <h3><?php echo rupiah($row['harga']); ?></h3>
         <br>
-        <h3>Harga : Rp. 15.000</h3>
-        <br>
-        <a href="produk_edit.php" class="link" style="text-align:center;"> Edit </a>
+        <a href="produk_edit.php?idproduk=<?php echo $row['idproduk']; ?>" class="link" style="text-align:center;"> Edit </a>
 
       </div>
-    
+
       <!-- <div class="cart card flex">
         <h2>Keranjang</h2>
         <table>
@@ -46,34 +48,10 @@ require_once "../view/header_admin.php";
         <h3>Jumlah : Rp 15.000</h3><br>
         <a href="konfirmasi.php" class="link"> Konfirmasi Pembelian </a>
       </div> -->
-    
-    </div>
-
-    <div class="review">
-      <h1>Review</h1>
-
-      <div class="flex review-container">
-        <div class="card">
-          <h2>Review 1</h2>
-          <p>tanggal</p><br>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, atque architecto. Est illo officia porro, hic cumque sit. Illum, inventore nam totam mollitia iusto reprehenderit voluptates. Numquam ipsam sint perferendis.</p>
-        </div>
-        <div class="card">
-          <h2>Review 1</h2>
-          <p>tanggal</p><br>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, atque architecto. Est illo officia porro, hic cumque sit. Illum, inventore nam totam mollitia iusto reprehenderit voluptates. Numquam ipsam sint perferendis.</p>
-        </div>
-        <div class="card">
-          <h2>Review 1</h2>
-          <p>tanggal</p><br>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, atque architecto. Est illo officia porro, hic cumque sit. Illum, inventore nam totam mollitia iusto reprehenderit voluptates. Numquam ipsam sint perferendis.</p>
-        </div>
-        <a href="" class="link"> Tambah Review </a>
-      </div>
-
 
     </div>
-  </div>
+  <?php } ?>
+</div>
 
 
 <?php
