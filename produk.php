@@ -51,7 +51,7 @@ if (isset($_GET['action']) && $_GET['action'] == "remove") {
         <h3><?php echo rupiah($row['harga']); ?></h3>
         <div class="buy flex">
           <a href="produk.php?page=produk&action=add&idproduk=<?php echo $row['idproduk']; ?>" class="buy-link link"> <span class="center">Masukan Keranjang</span> </a>
-          <a href="" class="buy-link link"> <span class="center">Beli Langsung</span></a>
+          <a href="beli_langsung.php?idproduk=<?php echo $row['idproduk']; ?>" class="buy-link link"> <span class="center">Beli Langsung</span></a>
         </div>
       </div>
     <?php } ?>

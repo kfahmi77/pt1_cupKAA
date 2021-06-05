@@ -1,9 +1,10 @@
 <?php
-require_once "view/header_admin.php";
-include 'script/koneksi.php';
+require_once "../view/header_admin.php";
+include '../script/koneksi.php';
+session_start();
 if (isset($_POST["login"])) {
-  $user = $datalogin["username"];
-  $pass = $datalogin["password"];
+  $user = $_POST["username"];
+  $pass = $_POST["password"];
 
   $checkuser = mysqli_query($conn, "SELECT * FROM admin WHERE username='$user'");
   if (mysqli_num_rows($checkuser) === 1) {
@@ -14,14 +15,14 @@ if (isset($_POST["login"])) {
       $_SESSION["user"] = $user;
       $_SESSION["login"] = true;
 
-      if (isset($datalogin["rememeberme"])) {
+      if (isset($_POST["rememeberme"])) {
         setcookie("login", "tetap_ingat", time() + 30);
       } else {
         echo "Cookie belum dibuat";
       }
       echo "
 		<script>alert('Anda berhasil login');
-		document.location.href='administrator.php';
+		document.location.href='index_admin.php';
 		</script>
 		";
     }
@@ -38,7 +39,7 @@ if (isset($_POST["login"])) {
     <input class="input" type="text" name="username" placeholder="Nama" required>
     <input class="input" type="password" name="password" placeholder="Password" required>
     <input type="checkbox" name="rememberme" value="rememberme">Ingat Saya<br><br>
-    <input type="button" value="Masuk" class="link">
+    <input type="submit" value="Masuk" class="link" name="login">
 
   </form>
 </div>
@@ -46,5 +47,5 @@ if (isset($_POST["login"])) {
 
 
 <?php
-require_once "view/footer_admin.php";
+require_once "../view/footer_admin.php";
 ?>

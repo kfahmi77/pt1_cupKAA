@@ -1,6 +1,18 @@
 <?php
 require_once "../view/header_admin.php";
 include '../script/koneksi.php';
+session_start();
+if (isset($_COOKIE["login"])) {
+  if ($_COOKIE["login" == "true"]) {
+    $_SESSION["login"] = true;
+  }
+}
+if (!isset($_SESSION["login"])) {
+  echo "<script>alert('Halaman tidak bisa diakses :)')
+	document.location.href='index.php';
+	</script>";
+  die;
+}
 if (isset($_GET['idtentang'])) {
   // ambil nilai idtentang dari url dan disimpan dalam variabel $id
   $idtentang = ($_GET["idtentang"]);
