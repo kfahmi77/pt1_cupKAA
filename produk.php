@@ -117,7 +117,7 @@ if (isset($_GET['action']) && $_GET['action'] == "remove") {
     </div>
 
     <div class="review">
-      <h1>Review</h1>
+      <h1>Ulasan</h1>
 
       <div class="flex review-container">
         <div class="card">
@@ -135,9 +135,33 @@ if (isset($_GET['action']) && $_GET['action'] == "remove") {
           <p>tanggal</p><br>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, atque architecto. Est illo officia porro, hic cumque sit. Illum, inventore nam totam mollitia iusto reprehenderit voluptates. Numquam ipsam sint perferendis.</p>
         </div>
-        <a href="" class="link"> Tambah Review </a>
+        <input type="button" value="Tambah Ulasan" class="link" onclick="review()">
       </div>
 
+      <div class="flex review-form" id="review-form">
+      <h1>Tambah Ulasan</h1>
+        <input class="input" type="text" placeholder="Nama" name="nama">
+        <label for=""> Rating anda mengenai produk kami </label>
+        <div class="input flex radio-input">
+          <span class="radio">
+            <input type="radio" name="rating" value="1" id="1"><br><label for="1">Tidak Puas</label>
+          </span>
+          <span class="radio">
+            <input type="radio" name="rating" value="2" id="2"><br><label for="2">Kurang Puas</label>
+          </span>
+          <span class="radio">
+            <input type="radio" name="rating" value="3" id="3"><br><label for="3">Biasa</label>
+          </span>
+          <span class="radio">
+            <input type="radio" name="rating" value="4" id="4"><br><label for="4">Agak Puas</label>
+          </span>
+          <span class="radio">
+            <input type="radio" name="rating" value="5" id="5"><br><label for="5">Sangat Puas</label>
+          </span>
+        </div>
+        <textarea class="input" style="min-height:10rem; resize: none;" type="text" placeholder="Ketik review anda disini mengenai produk kami ini..." name="tentang" required></textarea>
+        <input type="submit" value="Submit Review" class="link" name="submit">
+      </div>
 
     </div>
 </div>

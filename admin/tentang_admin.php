@@ -26,7 +26,7 @@ if (!isset($_SESSION["login"])) {
       <div class="desc">
         <h2><?php echo $row['judul']; ?> </h2>
         <p><?php echo $row['deskripsi']; ?></p>
-        <a href="kontak_edit.php?idtentang=<?php echo $row['idtentang']; ?>" class="link" style="text-align:center;"> Edit </a>
+        <a href="tentang_edit.php?idtentang=<?php echo $row['idtentang']; ?>" class="link" style="text-align:center;"> Edit </a>
       </div>
 
       <div class="img">

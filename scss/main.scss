@@ -197,14 +197,47 @@ table {
   .link {
     margin-top: 2rem;
   }
+  h2 {
+    color: $maincolor;
+    font-weight: lighter;
+  }
   h1 {
+    color: $maincolor;
     margin: 2rem;
+    font-weight: lighter;
   }
   .review-container {
     justify-content: space-between;
     .card {
       flex-basis: 30%;
       border-color: $maincolor;
+    }
+  }
+  .review-form {
+    border: 0.1rem solid $mainhovercolor;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    display: none;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    .link {
+      margin: 0;
+    }
+    .input {
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      line-height: 1.65;
+      padding: 0.5rem;
+    }
+    .radio-input {
+      flex-direction: row;
+      justify-content: space-between;
+      .radio {
+        flex-basis: 1;
+        text-align: center;
+      }
     }
   }
 }
