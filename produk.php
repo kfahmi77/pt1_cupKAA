@@ -2,7 +2,6 @@
 require_once "view/header.php";
 include 'script/koneksi.php';
 session_start();
-$id = $_GET['idproduk'];
 if (isset($_GET['action']) && $_GET['action'] == "add") {
   $id = intval($_GET['idproduk']);
   if (isset($_SESSION['cart'][$id])) {
@@ -28,6 +27,7 @@ if (isset($_GET['action']) && $_GET['action'] == "remove") {
     }
   }
 }
+$id = $_GET['idproduk'];
 if (isset($_GET['act']) && $_GET['act'] == "submit") {
   // membaca data komentar dari form
   $nama = $_POST['namareview'];
@@ -37,7 +37,7 @@ if (isset($_GET['act']) && $_GET['act'] == "submit") {
   $deskripsireview = $_POST['deskripsireview'];
 
   // proses insert komentar ke database
-  $query = "INSERT INTO review_produk (namareview, tgl, rating, idproduk, deskripsireview)
+  $query = "INSERT INTO review_produk(namareview, tgl, rating, idproduk, deskripsireview)
             VALUES ('$nama', '$tgl', '$rating', '$idproduk', '$deskripsireview')";
   $hasil = mysqli_query($conn, $query);
 }
@@ -157,7 +157,7 @@ if (isset($_GET['act']) && $_GET['act'] == "submit") {
 
       <div class="flex review-form" id="review-form">
         <h1>Tambah Ulasan</h1>
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>?idproduk=<?php echo $idproduk; ?>&act=submit" method="post">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>?page=produk&act=submit&idproduk=<?php echo $idproduk; ?>" method="post">
           <input class="input" type="hidden" placeholder="test" name="idproduk" value="<?php echo $idproduk ?>">
           <input class="input" type="hidden" placeholder="Nama" name="tgl" value="<?php echo date("Y-m-d h:i:sa"); ?>">
           <input class="input" type="text" placeholder="Nama" name="namareview">
