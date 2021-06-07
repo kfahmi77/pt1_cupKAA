@@ -2,6 +2,7 @@
 require_once "view/header.php";
 include 'script/koneksi.php';
 session_start();
+$id = $_GET['idproduk'];
 if (isset($_GET['action']) && $_GET['action'] == "add") {
   $id = intval($_GET['idproduk']);
   if (isset($_SESSION['cart'][$id])) {
@@ -27,11 +28,24 @@ if (isset($_GET['action']) && $_GET['action'] == "remove") {
     }
   }
 }
+if (isset($_GET['act']) && $_GET['act'] == "submit") {
+  // membaca data komentar dari form
+  $nama = $_POST['namareview'];
+  $tgl = $_POST['tgl'];
+  $rating = $_POST['rating'];
+  $idproduk = $_POST['idproduk'];
+  $deskripsireview = $_POST['deskripsireview'];
+
+  // proses insert komentar ke database
+  $query = "INSERT INTO review_produk (namareview, tgl, rating, idproduk, deskripsireview)
+            VALUES ('$nama', '$tgl', '$rating', '$idproduk', '$deskripsireview')";
+  $hasil = mysqli_query($conn, $query);
+}
+
 ?>
 
 <div class="main-container">
   <?php
-  $id = $_GET['idproduk'];
   $ambildata = mysqli_query($conn, "SELECT idproduk,namaproduk,namajenis,deskripsi,harga,gambar FROM produk JOIN jenis_produk ON produk.jenisproduk=jenis_produk.idjenis WHERE idproduk='$id'");
   while ($row = mysqli_fetch_array($ambildata)) {
   ?>
@@ -120,49 +134,55 @@ if (isset($_GET['action']) && $_GET['action'] == "remove") {
       <h1>Ulasan</h1>
 
       <div class="flex review-container">
-        <div class="card">
-          <h2>Review 1</h2>
-          <p>tanggal</p><br>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, atque architecto. Est illo officia porro, hic cumque sit. Illum, inventore nam totam mollitia iusto reprehenderit voluptates. Numquam ipsam sint perferendis.</p>
-        </div>
-        <div class="card">
-          <h2>Review 1</h2>
-          <p>tanggal</p><br>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, atque architecto. Est illo officia porro, hic cumque sit. Illum, inventore nam totam mollitia iusto reprehenderit voluptates. Numquam ipsam sint perferendis.</p>
-        </div>
-        <div class="card">
-          <h2>Review 1</h2>
-          <p>tanggal</p><br>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, atque architecto. Est illo officia porro, hic cumque sit. Illum, inventore nam totam mollitia iusto reprehenderit voluptates. Numquam ipsam sint perferendis.</p>
-        </div>
+        <?php
+        $idproduk = $_GET['idproduk'];
+        $query = "SELECT * FROM review_produk WHERE idproduk = '$idproduk'";
+        $hasil = mysqli_query($conn, $query);
+        if (mysqli_num_rows($hasil) > 0) {
+          while ($data = mysqli_fetch_array($hasil)) {
+        ?>
+            <div class="card">
+              <h2><?php echo $data['namareview']; ?></h2>
+              <p><?php echo $data['tgl']; ?></p><br>
+              <p><?php echo $data['rating']; ?></p>
+              <p><?php echo $data['deskripsireview']; ?></p>
+            </div>
+          <?php }
+        } elseif (mysqli_num_rows($hasil) == 0) {
+          ?>
+          <h2>Tidak ada ulasan</h2><br>
+        <?php } ?>
         <input type="button" value="Tambah Ulasan" class="link" onclick="review()">
       </div>
 
       <div class="flex review-form" id="review-form">
-      <h1>Tambah Ulasan</h1>
-        <input class="input" type="text" placeholder="Nama" name="nama">
-        <label for=""> Rating anda mengenai produk kami </label>
-        <div class="input flex radio-input">
-          <span class="radio">
-            <input type="radio" name="rating" value="1" id="1"><br><label for="1">Tidak Puas</label>
-          </span>
-          <span class="radio">
-            <input type="radio" name="rating" value="2" id="2"><br><label for="2">Kurang Puas</label>
-          </span>
-          <span class="radio">
-            <input type="radio" name="rating" value="3" id="3"><br><label for="3">Biasa</label>
-          </span>
-          <span class="radio">
-            <input type="radio" name="rating" value="4" id="4"><br><label for="4">Agak Puas</label>
-          </span>
-          <span class="radio">
-            <input type="radio" name="rating" value="5" id="5"><br><label for="5">Sangat Puas</label>
-          </span>
-        </div>
-        <textarea class="input" style="min-height:10rem; resize: none;" type="text" placeholder="Ketik review anda disini mengenai produk kami ini..." name="tentang" required></textarea>
-        <input type="submit" value="Submit Review" class="link" name="submit">
+        <h1>Tambah Ulasan</h1>
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>?idproduk=<?php echo $idproduk; ?>&act=submit" method="post">
+          <input class="input" type="text" placeholder="test" name="idproduk" value="<?php echo $idproduk ?>">
+          <input class="input" type="hidden" placeholder="Nama" name="tgl" value="<?php echo date("Y-m-d h:i:sa"); ?>">
+          <input class="input" type="text" placeholder="Nama" name="namareview">
+          <label for=""> Rating anda mengenai produk kami </label>
+          <div class="input flex radio-input">
+            <span class="radio">
+              <input type="radio" name="rating" value="tidak puas" id="1"><br><label for="1">Tidak Puas</label>
+            </span>
+            <span class="radio">
+              <input type="radio" name="rating" value="kurang puas" id="2"><br><label for="2">Kurang Puas</label>
+            </span>
+            <span class="radio">
+              <input type="radio" name="rating" value="biasa" id="3"><br><label for="3">Biasa</label>
+            </span>
+            <span class="radio">
+              <input type="radio" name="rating" value="agak puas" id="4"><br><label for="4">Agak Puas</label>
+            </span>
+            <span class="radio">
+              <input type="radio" name="rating" value="sangat puas" id="5"><br><label for="5">Sangat Puas</label>
+            </span>
+          </div>
+          <textarea class="input" style="min-height:10rem; resize: none;" type="text" placeholder="Ketik review anda disini mengenai produk kami ini..." name="deskripsireview" required></textarea>
+          <input type="submit" value="Submit Review" class="link" name="submit">
       </div>
-
+      </form>
     </div>
 </div>
 
