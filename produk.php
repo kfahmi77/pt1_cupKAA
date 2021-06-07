@@ -158,7 +158,7 @@ if (isset($_GET['act']) && $_GET['act'] == "submit") {
       <div class="flex review-form" id="review-form">
         <h1>Tambah Ulasan</h1>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>?idproduk=<?php echo $idproduk; ?>&act=submit" method="post">
-          <input class="input" type="text" placeholder="test" name="idproduk" value="<?php echo $idproduk ?>">
+          <input class="input" type="hidden" placeholder="test" name="idproduk" value="<?php echo $idproduk ?>">
           <input class="input" type="hidden" placeholder="Nama" name="tgl" value="<?php echo date("Y-m-d h:i:sa"); ?>">
           <input class="input" type="text" placeholder="Nama" name="namareview">
           <label for=""> Rating anda mengenai produk kami </label>
