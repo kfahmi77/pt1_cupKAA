@@ -54,13 +54,20 @@ table {
 .link {
   color: white;
   background-color: #714f38;
-  margin: 10px;
-  padding: 15px 30px;
+  padding: 1rem 1.5rem;
   border-radius: 10px;
 }
 
 .link:hover {
   background-color: #a35c29;
+}
+
+.list {
+  color: white;
+  background-color: #714f38;
+  margin: 1rem;
+  padding: 1rem 0;
+  border-radius: 10px;
 }
 
 .header {
@@ -77,14 +84,10 @@ table {
 
 .header .logo {
   margin-left: 2rem;
-  width: 8rem;
-  border-radius: 1rem;
+  max-height: 5rem;
 }
 
 .header .navbar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   margin-right: 1rem;
 }
 
@@ -115,6 +118,7 @@ table {
 }
 
 .produk-list .produk-item h2 {
+  text-align: center;
   color: #714f38;
   margin: auto;
   font-weight: lighter;
@@ -123,8 +127,16 @@ table {
   border-bottom: 0.3rem solid #714f38;
 }
 
+.produk-list .produk-item h3 {
+  text-align: center;
+  font-weight: lighter;
+  margin-bottom: 1rem;
+}
+
 .produk-list .produk-item p {
   margin-bottom: 1rem;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 .produk-list .produk-item a {
@@ -238,7 +250,7 @@ table {
 
 .review h1 {
   color: #714f38;
-  margin: 2rem;
+  margin-top: 2rem;
   font-weight: lighter;
 }
 
@@ -249,9 +261,13 @@ table {
 }
 
 .review .review-container .card {
-  -ms-flex-preferred-size: 30%;
-      flex-basis: 30%;
+  -ms-flex-preferred-size: 32%;
+      flex-basis: 32%;
   border-color: #714f38;
+}
+
+.review .review-container .card-review {
+  margin-top: 2rem;
 }
 
 .review .review-form {
@@ -260,7 +276,7 @@ table {
   padding: 1.5rem;
   margin-top: 1.5rem;
   display: none;
-  width: 50%;
+  width: 45%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -270,11 +286,18 @@ table {
           justify-content: center;
 }
 
+.review .review-form #add-review {
+  margin: 1.5rem;
+  margin-top: 0;
+}
+
 .review .review-form .link {
   margin: 0;
 }
 
 .review .review-form .input {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
   margin-bottom: 2rem;
   border-radius: 10px;
   line-height: 1.65;
@@ -420,10 +443,10 @@ table {
   border: 0.8rem solid #714f38;
   border-radius: 20px;
   -ms-grid-row: 1;
-  -ms-grid-row-span: 7;
+  -ms-grid-row-span: 8;
   -ms-grid-column: 1;
   -ms-grid-column-span: 6;
-  grid-area: 1 / 1 / 8 / 7;
+  grid-area: 1 / 1 / 9 / 7;
 }
 
 .tentang .desc h2 {
@@ -441,10 +464,10 @@ table {
 
 .tentang .img {
   -ms-grid-row: 2;
-  -ms-grid-row-span: 5;
+  -ms-grid-row-span: 6;
   -ms-grid-column: 6;
-  -ms-grid-column-span: 6;
-  grid-area: 2 / 6 / 7 / 12;
+  -ms-grid-column-span: 7;
+  grid-area: 2 / 6 / 8 / 13;
 }
 
 .kontak {
@@ -654,10 +677,189 @@ table {
 }
 
 @media only screen and (max-width: 768px) {
-  .navbar {
+  .header {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .header .logo {
+    margin: auto;
+    padding: auto;
+  }
+  .produk-list {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .main a {
+    text-align: center;
+  }
+  .main .product {
+    -ms-flex-preferred-size: 48%;
+        flex-basis: 48%;
+  }
+  .main .desc {
+    -ms-flex-preferred-size: 48%;
+        flex-basis: 48%;
+  }
+  .main .cart {
+    margin: auto;
+    margin-top: 2rem;
+    -ms-flex-preferred-size: 70%;
+        flex-basis: 70%;
+  }
+  .review .review-container .card {
+    -ms-flex-preferred-size: 48%;
+        flex-basis: 48%;
+  }
+  .review .review-form {
+    width: 80%;
+    margin: 1rem auto;
+  }
+  .konfirmasi .kon-container .cart {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .konfirmasi .kon-container .form {
+    margin-top: 2rem;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .tentang {
+    width: 90%;
+  }
+  .tentang .title {
+    text-align: center;
+    font-size: 2rem;
+  }
+  .tentang .desc {
+    border-width: 0.4rem;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 8;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+    grid-area: 1 / 1 / 9 / 7;
+  }
+  .tentang .img {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 6;
+    -ms-grid-column: 6;
+    -ms-grid-column-span: 7;
+    grid-area: 2 / 6 / 8 / 13;
+  }
+  .kontak .title {
+    text-align: center;
+    font-size: 2rem;
+  }
+  .kontak .subtitle {
+    font-size: 1.5rem;
+  }
+  .kontak .identitas .img {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .kontak .identitas .desc {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .kontak .identitas .desc h2 {
+    text-align: center;
+    margin: 1rem 0;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .header .navbar {
+    display: none;
+  }
+  .produk-list {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .main .product {
+    margin: auto;
+    -ms-flex-preferred-size: 60%;
+        flex-basis: 60%;
+  }
+  .main .desc {
+    margin: auto;
+    margin-top: 1rem;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .main .cart {
+    margin: auto;
+    margin-top: 2rem;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .konfirmasi .title {
+    text-align: center;
+    font-size: 1.7rem;
+  }
+  .review .review-container .card {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .review .review-form {
+    width: 100%;
+    margin: 1rem auto;
+  }
+  .review .review-form .radio-input {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .tentang .title {
+    text-align: center;
+    font-size: 1.75rem;
+  }
+  .tentang .grid {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: (1fr)[3];
+        grid-template-rows: repeat(3, 1fr);
+  }
+  .tentang .desc {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: 2 / 1 / 4 / 3;
+  }
+  .tentang .desc h2 {
+    font-size: 1.4rem;
+  }
+  .tentang .desc p {
+    width: 100%;
+  }
+  .tentang .img {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: 1 / 1 / 2 / 3;
+  }
+  .kontak .title {
+    text-align: center;
+    font-size: 1.7rem;
+  }
+  .kontak .subtitle {
+    font-size: 1.2rem;
+  }
+  .kontak .identitas .desc h2 {
+    font-size: 1.2rem;
+  }
+  .kontak .sosmed .link-sosmed {
+    font-size: 1rem;
   }
 }

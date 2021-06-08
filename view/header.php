@@ -12,11 +12,11 @@
 <body>
 
     <div class="header flex">
-      <a href=""><img class="logo" src="dist/img/coffee-2358388_1920.jpg" alt=""></a>
+      <a href="index.php"><img class="logo" src="dist/img/logo-cup-kaa.png" alt=""></a>
       <ul class="navbar flex">
-        <li><a href="index.php" class="link"> Beranda </a></li>
-        <li><a href="produklist.php" class="link"> Produk </a></li>
-        <li><a href="tentang.php" class="link"> Tentang </a></li>
-        <li><a href="kontak.php" class="link"> Kontak </a></li>
+        <li class="list"><a href="index.php" class="link"> Beranda </a></li>
+        <li class="list"><a href="produklist.php" class="link"> Produk </a></li>
+        <li class="list"><a href="tentang.php" class="link"> Tentang </a></li>
+        <li class="list"><a href="kontak.php" class="link"> Kontak </a></li>
       </ul>
     </div>

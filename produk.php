@@ -141,7 +141,7 @@ if (isset($_GET['act']) && $_GET['act'] == "submit") {
         if (mysqli_num_rows($hasil) > 0) {
           while ($data = mysqli_fetch_array($hasil)) {
         ?>
-            <div class="card">
+            <div class="card card-review">
               <h2><?php echo $data['namareview']; ?></h2>
               <p><?php echo $data['tgl']; ?></p><br>
               <p><?php echo $data['rating']; ?></p>
@@ -150,14 +150,15 @@ if (isset($_GET['act']) && $_GET['act'] == "submit") {
           <?php }
         } elseif (mysqli_num_rows($hasil) == 0) {
           ?>
-          <h2>Tidak ada ulasan</h2><br>
+          <h2>Belum ada ulasan</h2><br>
         <?php } ?>
-        <input type="button" value="Tambah Ulasan" class="link" onclick="review()">
       </div>
 
+      <input type="button" value="Tambah Ulasan" class="link" onclick="review()">
+
       <div class="flex review-form" id="review-form">
-        <h1>Tambah Ulasan</h1>
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>?page=produk&act=submit&idproduk=<?php echo $idproduk; ?>" method="post">
+        <h1 id="add-review">Tambah Ulasan</h1>
+        <form class="form flex" action="<?php echo $_SERVER['PHP_SELF']; ?>?page=produk&act=submit&idproduk=<?php echo $idproduk; ?>" method="post">
           <input class="input" type="hidden" placeholder="test" name="idproduk" value="<?php echo $idproduk ?>">
           <input class="input" type="hidden" placeholder="Nama" name="tgl" value="<?php echo date("Y-m-d h:i:sa"); ?>">
           <input class="input" type="text" placeholder="Nama" name="namareview">

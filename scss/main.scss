@@ -53,12 +53,19 @@ table {
 .link {
   color: $pmaincolor;
   background-color: $maincolor;
-  margin: 10px;
-  padding: 15px 30px;
+  padding: 1rem 1.5rem;
   border-radius: 10px;
   &:hover {
     background-color: $mainhovercolor;
   }
+}
+
+.list {
+  color: $pmaincolor;
+  background-color: $maincolor;
+  margin: 1rem;
+  padding: 1rem 0;
+  border-radius: 10px;
 }
 
 // akhir deklarasi class umum
@@ -73,12 +80,10 @@ table {
   margin-bottom: 2rem;
   .logo {
     margin-left: 2rem;
-    width: 8rem;
-    border-radius: 1rem;
+    max-height: 5rem;
   }
 
   .navbar {
-    display: flex;
     margin-right: 1rem;
   }
 }
@@ -103,6 +108,7 @@ table {
       margin-bottom: 2rem;
     }
     h2 {
+      text-align: center;
       color: $maincolor;
       margin: auto;
       font-weight: lighter;
@@ -110,8 +116,14 @@ table {
       padding-bottom: 0.5rem;
       border-bottom: 0.3rem solid $maincolor;
     }
+    h3 {
+      text-align: center;
+      font-weight: lighter;
+      margin-bottom: 1rem;
+    }
     p {
       margin-bottom: 1rem;
+      align-self: flex-start;
     }
     a {
       margin: auto;
@@ -203,14 +215,17 @@ table {
   }
   h1 {
     color: $maincolor;
-    margin: 2rem;
+    margin-top: 2rem;
     font-weight: lighter;
   }
   .review-container {
     justify-content: space-between;
     .card {
-      flex-basis: 30%;
+      flex-basis: 32%;
       border-color: $maincolor;
+    }
+    .card-review {
+      margin-top: 2rem;
     }
   }
   .review-form {
@@ -219,13 +234,18 @@ table {
     padding: 1.5rem;
     margin-top: 1.5rem;
     display: none;
-    width: 50%;
+    width: 45%;
     flex-direction: column;
     justify-content: center;
+    #add-review {
+      margin: 1.5rem;
+      margin-top: 0;
+    }
     .link {
       margin: 0;
     }
     .input {
+      flex-basis: 100%;
       margin-bottom: 2rem;
       border-radius: 10px;
       line-height: 1.65;
@@ -336,7 +356,7 @@ table {
     padding: 2rem;
     border: 0.8rem solid $maincolor;
     border-radius: 20px;
-    grid-area: 1 / 1 / 8 / 7;
+    grid-area: 1 / 1 / 9 / 7;
     h2 {
       margin-bottom: 2.5rem;
       font-size: 1.8rem;
@@ -350,7 +370,7 @@ table {
     }
   }
   .img {
-    grid-area: 2 / 6 / 7 / 12;
+    grid-area: 2 / 6 / 8 / 13;
   }
 }
 
@@ -520,13 +540,200 @@ table {
 
 // akhir bagian footer.php
 
+// awal bagian screen ukuran 768px
+
+@media only screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    .logo {
+      margin: auto;
+      padding: auto;
+    }
+  }
+
+  .produk-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .main {
+    a {
+      text-align: center;
+    }
+    .product {
+      flex-basis: 48%;
+    }
+    .desc {
+      flex-basis: 48%;
+    }
+    .cart {
+      margin: auto;
+      margin-top: 2rem;
+      flex-basis: 70%;
+    }
+  }
+  .review {
+    .review-container {
+      .card {
+        flex-basis: 48%;
+      }
+    }
+    .review-form {
+      width: 80%;
+      margin: 1rem auto;
+    }
+  }
+
+  .konfirmasi {
+    .kon-container {
+      .cart {
+        flex-basis: 100%;
+      }
+      .form {
+        margin-top: 2rem;
+        flex-basis: 100%;
+      }
+    }
+  }
+
+  .tentang {
+    width: 90%;
+    .title {
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    .desc {
+      border-width: 0.4rem;
+      grid-area: 1 / 1 / 9 / 7;
+    }
+    .img {
+      grid-area: 2 / 6 / 8 / 13;
+    }
+  }
+
+  .kontak {
+    .title {
+      text-align: center;
+      font-size: 2rem;
+    }
+    .subtitle {
+      font-size: 1.5rem;
+    }
+    .identitas {
+      .img {
+        flex-basis: 100%;
+      }
+      .desc {
+        flex-basis: 100%;
+        h2 {
+          text-align: center;
+          margin: 1rem 0;
+        }
+      }
+    }
+  }
+}
+
 // awal bagian screen ukuran 360px
 
 @media only screen and (max-width: 360px) {
-}
+  .header {
+    flex-direction: row;
+    .navbar {
+      display: none;
+    }
+  }
 
-@media only screen and (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
+  .produk-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    .produk-item {
+    }
+  }
+
+  .main {
+    .product {
+      margin: auto;
+      flex-basis: 60%;
+    }
+    .desc {
+      margin: auto;
+      margin-top: 1rem;
+      flex-basis: 100%;
+    }
+    .cart {
+      margin: auto;
+      margin-top: 2rem;
+      flex-basis: 100%;
+    }
+  }
+
+  .konfirmasi {
+    .title {
+      text-align: center;
+      font-size: 1.7rem;
+    }
+  }
+
+  .review {
+    .review-container {
+      .card {
+        flex-basis: 100%;
+      }
+    }
+    .review-form {
+      width: 100%;
+      margin: 1rem auto;
+      .radio-input {
+        flex-direction: column;
+      }
+    }
+  }
+
+  .tentang {
+    .title {
+      text-align: center;
+      font-size: 1.75rem;
+    }
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+    .desc {
+      grid-area: 2 / 1 / 4 / 3;
+      h2 {
+        font-size: 1.4rem;
+      }
+      p {
+        width: 100%;
+      }
+    }
+    .img {
+      grid-area: 1 / 1 / 2 / 3;
+    }
+  }
+
+  .kontak {
+    .title {
+      text-align: center;
+      font-size: 1.7rem;
+    }
+    .subtitle {
+      font-size: 1.2rem;
+    }
+    .identitas {
+      .desc {
+        h2 {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .sosmed {
+      .link-sosmed {
+        font-size: 1rem;
+      }
+    }
   }
 }

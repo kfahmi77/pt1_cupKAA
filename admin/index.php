@@ -45,12 +45,12 @@ if (isset($_POST["login"])) {
 <body>
 
     <div class="header flex">
-      <a href=""><img class="logo" src="../dist/img/coffee-2358388_1920.jpg" alt=""></a>
+      <a href="../index.php"><img class="logo" src="../dist/img/logo-cup-kaa.png" alt=""></a>
       <ul class="navbar flex">
-        <li><a href="../index.php" class="link"> Beranda </a></li>
-        <li><a href="../produklist.php" class="link"> Produk </a></li>
-        <li><a href="../tentang.php" class="link"> Tentang </a></li>
-        <li><a href="../kontak.php" class="link"> Kontak </a></li>
+        <li class="list"><a href="../index.php" class="link"> Beranda </a></li>
+        <li class="list"><a href="../produklist.php" class="link"> Produk </a></li>
+        <li class="list"><a href="../tentang.php" class="link"> Tentang </a></li>
+        <li class="list"><a href="../kontak.php" class="link"> Kontak </a></li>
       </ul>
     </div>
 
@@ -60,7 +60,9 @@ if (isset($_POST["login"])) {
         <!-- jang login, mun bisa pang nambahkeun validasi na -->
         <input class="input" type="text" name="username" placeholder="Nama" required>
         <input class="input" type="password" name="password" placeholder="Password" required>
-        <input type="checkbox" name="rememberme" value="rememberme">Ingat Saya<br><br>
+        <span>
+          <input class="input" type="checkbox" name="rememberme" value="rememberme"><label for="rememberme" style="margin-left:1rem;">Ingat Saya</label>
+        </span>
         <input type="submit" value="Masuk" class="link" name="login">
 
       </form>
