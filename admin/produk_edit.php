@@ -56,8 +56,6 @@ if (isset($_GET['idproduk'])) {
         <i style="float: left;font-size: 11px;color: red">Abaikan jika tidak merubah gambar produk</i>
       </div>
       <button type="submit" class="link">Edit</button>
-      <a href="proses_hapus_produk.php?idproduk=<?php echo $row['idproduk']; ?>" class="link" onclick="return confirm('Anda yakin akan menghapus data ini?')" style="text-align:center;"> Hapus </a>
-
     </form>
   </div>
 </div>

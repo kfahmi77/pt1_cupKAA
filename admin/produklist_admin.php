@@ -27,9 +27,8 @@ if (!isset($_SESSION["login"])) {
       <div class="produk-item card flex">
         <img class="thumb" src="../dist/img/gambar_produk/<?php echo $row['gambar']; ?>" alt="">
         <h2> <?php echo $row['namaproduk']; ?> </h2>
-        <p><?php echo $row['namajenis']; ?></p>
         <p><?php echo substr($row['deskripsi'], 0, 70) ?>...</p>
-        <p><?php echo rupiah($row['harga']); ?></p>
+        <h3><?php echo rupiah($row['harga']); ?></h3>
         <a href="produk_admin.php?idproduk=<?php echo $row['idproduk']; ?>" class=" link">Lihat Produk</a>
         <form action="" class="flex form">
           <!-- ieu di hidden meh langsung bisa ngadelete datana, -->

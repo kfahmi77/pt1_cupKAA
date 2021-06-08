@@ -21,11 +21,11 @@ if (!isset($_SESSION["login"])) {
   $ambildata = mysqli_query($conn, "SELECT idproduk,namaproduk,namajenis,deskripsi,harga,gambar FROM produk JOIN jenis_produk ON produk.jenisproduk=jenis_produk.idjenis WHERE idproduk='$id'");
   while ($row = mysqli_fetch_array($ambildata)) {
   ?>
-    <div class="flex main">
-      <div class="product" style="flex-basis:40%;">
+    <div class="flex main admin">
+      <div class="product" >
         <img src="../dist/img/gambar_produk/<?php echo $row['gambar']; ?>" alt="" class="thumbnail">
       </div>
-      <div class="desc card " style="flex-basis:50%;">
+      <div class="desc card">
         <h2> Nama Produk </h2>
         <h3>Komposisi</h3>
         <ul>
@@ -39,30 +39,32 @@ if (!isset($_SESSION["login"])) {
         <a href="produk_edit.php?idproduk=<?php echo $row['idproduk']; ?>" class="link" style="text-align:center;"> Edit </a>
 
       </div>
-
-      <!-- <div class="cart card flex">
-        <h2>Keranjang</h2>
-        <table>
-          <tr class="table">
-            <th>No</th>
-            <th>Produk</th>
-            <th>Jumlah</th>
-            <th>Harga</th>
-          </tr>
-          <tr class="table">
-            <td>1.</td>
-            <td>Kopi es teh anget</td>
-            <td>1</td>
-            <td>Rp 15.000</td>
-          </tr>
-        </table>
-        <br>
-        <h3>Jumlah : Rp 15.000</h3><br>
-        <a href="konfirmasi.php" class="link"> Konfirmasi Pembelian </a>
-      </div> -->
-
     </div>
   <?php } ?>
+  <div class="review">
+        <h1>Ulasan</h1>
+
+        <div class="flex review-container">
+          <?php
+          $idproduk = $_GET['idproduk'];
+          $query = "SELECT * FROM review_produk WHERE idproduk = '$idproduk'";
+          $hasil = mysqli_query($conn, $query);
+          if (mysqli_num_rows($hasil) > 0) {
+            while ($data = mysqli_fetch_array($hasil)) {
+          ?>
+              <div class="card card-review">
+                <h2><?php echo $data['namareview']; ?></h2>
+                <p><?php echo $data['tgl']; ?></p><br>
+                <p><?php echo $data['rating']; ?></p>
+                <p><?php echo $data['deskripsireview']; ?></p>
+              </div>
+            <?php }
+          } elseif (mysqli_num_rows($hasil) == 0) {
+            ?>
+            <h2>Belum ada ulasan</h2><br>
+          <?php } ?>
+        </div>
+      </div>
 </div>
 
 

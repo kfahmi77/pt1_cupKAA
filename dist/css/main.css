@@ -143,6 +143,16 @@ table {
   margin: auto;
 }
 
+.admin .product {
+  -ms-flex-preferred-size: 49%;
+      flex-basis: 49%;
+}
+
+.admin .desc {
+  -ms-flex-preferred-size: 49%;
+      flex-basis: 49%;
+}
+
 .main {
   padding-bottom: 5rem;
   -webkit-box-align: start;
@@ -676,6 +686,33 @@ table {
   color: white;
 }
 
+.menu-small {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: pointer;
+  padding: 0.25rem;
+  border: 3px solid #714f38;
+  display: none;
+}
+
+.menu-burger {
+  width: 35px;
+  height: 5px;
+  background-color: #714f38;
+  margin: 0.25rem;
+}
+
+.closeNav {
+  display: none;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 2rem;
+  margin-left: 50px;
+}
+
 @media only screen and (max-width: 768px) {
   .header {
     -webkit-box-orient: vertical;
@@ -777,12 +814,45 @@ table {
             flex-direction: row;
   }
   .header .navbar {
-    display: none;
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header .navbar .list {
+    margin: 1.5rem auto;
+    text-align: center;
   }
   .produk-list {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     gap: 1rem;
+  }
+  .admin .product {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .admin .desc {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
   }
   .main .product {
     margin: auto;
@@ -861,5 +931,20 @@ table {
   }
   .kontak .sosmed .link-sosmed {
     font-size: 1rem;
+  }
+  .edit .img {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-bottom: 2rem;
+  }
+  .menu-small {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .closeNav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }

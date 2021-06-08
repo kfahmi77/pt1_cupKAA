@@ -13,10 +13,16 @@
 
     <div class="header flex">
       <a href="index.php"><img class="logo" src="dist/img/logo-cup-kaa.png" alt=""></a>
-      <ul class="navbar flex">
+      <ul class="navbar flex" id="navbar">
+        <li><span class="closeNav link" onclick="closeNav()">&times;</span></li>
         <li class="list"><a href="index.php" class="link"> Beranda </a></li>
         <li class="list"><a href="produklist.php" class="link"> Produk </a></li>
         <li class="list"><a href="tentang.php" class="link"> Tentang </a></li>
         <li class="list"><a href="kontak.php" class="link"> Kontak </a></li>
       </ul>
+      <span class="menu-small" onclick="openNav()">
+        <div class="menu-burger"></div>
+        <div class="menu-burger"></div>
+        <div class="menu-burger"></div>
+      </span>
     </div>

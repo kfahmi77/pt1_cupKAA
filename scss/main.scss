@@ -135,6 +135,15 @@ table {
 
 // awal produk.php
 
+.admin {
+  .product {
+    flex-basis: 49%;
+  }
+  .desc {
+    flex-basis: 49%;
+  }
+}
+
 .main {
   padding-bottom: 5rem;
   align-items: flex-start;
@@ -540,6 +549,32 @@ table {
 
 // akhir bagian footer.php
 
+// menu burger
+.menu-small {
+  flex-direction: column;
+  cursor: pointer;
+  padding: 0.25rem;
+  border: 3px solid $maincolor;
+  display: none;
+}
+
+.menu-burger {
+  width: 35px;
+  height: 5px;
+  background-color: $maincolor;
+  margin: 0.25rem;
+}
+
+.closeNav {
+  display: none;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 2rem;
+  margin-left: 50px;
+}
+// menu burger
+
 // awal bagian screen ukuran 768px
 
 @media only screen and (max-width: 768px) {
@@ -641,15 +676,34 @@ table {
   .header {
     flex-direction: row;
     .navbar {
-      display: none;
+      height: 100%; /* 100% Full-height */
+      width: 0; /* 0 width - change this with JavaScript */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Stay on top */
+      top: 0; /* Stay at the top */
+      right: 0;
+      background-color: hsla(0, 0%, 0%, 0.75); /* Black*/
+      overflow-x: hidden; /* Disable horizontal scroll */
+      transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+      flex-direction: column;
+      .list {
+        margin: 1.5rem auto;
+        text-align: center;
+      }
     }
   }
 
   .produk-list {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
 
-    .produk-item {
+  .admin {
+    .product {
+      flex-basis: 100%;
+    }
+    .desc {
+      flex-basis: 100%;
     }
   }
 
@@ -735,5 +789,19 @@ table {
         font-size: 1rem;
       }
     }
+  }
+
+  .edit {
+    .img {
+      flex-basis: 100%;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .menu-small {
+    display: flex;
+  }
+  .closeNav {
+    display: flex;
   }
 }
