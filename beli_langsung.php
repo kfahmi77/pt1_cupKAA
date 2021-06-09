@@ -8,7 +8,7 @@ include 'script/koneksi.php';
     <?php
     $id = $_GET['idproduk'];
     $no = 1;
-    $ambildata = mysqli_query($conn, "SELECT idproduk,namaproduk,namajenis,deskripsi,harga,gambar FROM produk JOIN jenis_produk ON produk.jenisproduk=jenis_produk.idjenis WHERE idproduk='$id'");
+    $ambildata = mysqli_query($conn, "SELECT * FROM produk WHERE idproduk='$id'");
     while ($row = mysqli_fetch_array($ambildata)) {
     ?>
         <div class="kon-container flex">
