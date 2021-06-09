@@ -14,7 +14,7 @@
     <div class="container">
       <?php
       include 'script/koneksi.php';
-      $query = mysqli_query($conn, "SELECT * FROM tentang");
+      $query = mysqli_query($conn, "SELECT * FROM quote");
       $row = mysqli_fetch_array($query);
       ?>
       <h1><?php echo $row['judul']; ?></h1><br>

@@ -34,16 +34,16 @@ if (!isset($_SESSION["login"])) {
       ?>
         <h1><?php echo $row['judul']; ?></h1><br>
         <p><?php echo $row['deskripsi']; ?></p>
-      <?php } ?>
-      <br><br>
-      <div class="link-dash flex">
-        <a href="produklist_admin.php" class="link">Produk</a>
-        <a href="tentang_admin.php" class="link">Tentang</a>
-        <a href="kontak_admin.php" class="link">Kontak</a>
-        <a href="index_edit.php" class="link"> Edit </a>
-        <a href="logout.php" class="link" onclick="return confirm('Anda ingin Logout?')"> Logout </a>
-        <a href="edit_password.php" class="link"> Edit Password </a>
-      </div>
+        <br><br>
+        <div class="link-dash flex">
+          <a href="produklist_admin.php" class="link">Produk</a>
+          <a href="tentang_admin.php" class="link">Tentang</a>
+          <a href="kontak_admin.php" class="link">Kontak</a>
+          <a href="tentang_edit.php?idtentang=<?php echo $row['idtentang']; ?>" class="link"> Edit </a>
+          <a href="logout.php" class="link" onclick="return confirm('Anda ingin Logout?')"> Logout </a>
+          <a href="edit_password.php" class="link"> Edit Password </a>
+        <?php } ?>
+        </div>
     </div>
   </div>
 </body>

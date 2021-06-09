@@ -12,8 +12,8 @@ session_start();
     <input type="hidden" name="" value="">
 
     <!-- jang login, mun bisa pang nambahkeun validasi na -->
-    <input class="input" type="text" name="username" placeholder="Nama" required value="<?php echo $_SESSION['user']; ?>">
-    <input class="input" type="password" name="password" placeholder="Password" required>
+    <input class="input" type="text" name="username" placeholder="Username" required value="<?php echo $_SESSION['user']; ?>">
+    <input class="input" type="password" name="password" placeholder="Password Baru" required>
     <input type="submit" value="Edit" class="link" name="edit">
 
   </form>
