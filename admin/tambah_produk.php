@@ -26,16 +26,7 @@ if (!isset($_SESSION["login"])) {
     <form action="proses_tambah_produk.php" method="post" class="flex form" enctype="multipart/form-data">
       <!-- isi value ku nu geus aya dina database, meh mun teu jadi ngedit bisa langsung pencet konfirm atau update -->
       <input class="input" type="text" name="namaproduk" placeholder="Nama Produk" required>
-      <select class="input" name="jenisproduk" id="pengiriman" required>
-        <option value="">Silahkan pilih</option>
-        <?php
-        $ambildata = mysqli_query($conn, "SELECT idjenis,namajenis FROM  jenis_produk");
-        while ($row = mysqli_fetch_array($ambildata)) {
-        ?>
-          <option value="<?php echo $row['idjenis']; ?>"><?php echo $row['namajenis']; ?></option>
-        <?php }
-        ?>
-      </select>
+      <textarea class="input" type="text" placeholder="Komposisi" required style="resize: none;" name="komposisi"></textarea>
       <textarea class="input" type="text" placeholder="Deskripsi" required style="resize: none;" name="deskripsi"></textarea>
       <input class="input" type="text" name="harga" placeholder="Harga Produk" value="" required>
       <div class="input">
