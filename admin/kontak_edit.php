@@ -57,6 +57,7 @@ if (isset($_GET['idkontak'])) {
         <i style="float: left;font-size: 11px;color: red">Abaikan jika tidak merubah gambar</i>
       </div>
       <input type="submit" value="Update" class="link">
+      <li class="list"><a href="edit_password.php?idproduk=<?php echo $row['idproduk']; ?>" class="link" style="width:100%"> Edit Password </a></li>
     </form>
   </div>
 </div>

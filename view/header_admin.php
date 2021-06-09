@@ -21,8 +21,7 @@
       <li class="list"><a href="produklist_admin.php" class="link"> Produk </a></li>
       <li class="list"><a href="tentang_admin.php" class="link"> Tentang </a></li>
       <li class="list"><a href="kontak_admin.php" class="link"> Kontak </a></li>
-      <li class="list"><a href="logout.php" class="link" onclick="return confirm('Anda ingin Logout?')"> Logout </a></li>
-      <li class="list"><a href="edit_password.php" class="link" style="width:100%"> Edit Password </a></li>     
+      <li class="list"><a href="logout.php" class="link" onclick="return confirm('Anda ingin Logout?')"> Logout </a></li>   
     </ul>
     <span class="menu-small" onclick="openNav()">
         <div class="menu-burger"></div>
