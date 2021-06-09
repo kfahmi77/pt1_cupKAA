@@ -46,7 +46,7 @@ if (isset($_GET['act']) && $_GET['act'] == "submit") {
 
 <div class="main-container">
   <?php
-  $ambildata = mysqli_query($conn, "SELECT idproduk,namaproduk,namajenis,deskripsi,harga,gambar FROM produk JOIN jenis_produk ON produk.jenisproduk=jenis_produk.idjenis WHERE idproduk='$id'");
+  $ambildata = mysqli_query($conn, "SELECT * FROM produk WHERE idproduk='$id'");
   while ($row = mysqli_fetch_array($ambildata)) {
   ?>
     <div class="flex main">
@@ -57,7 +57,7 @@ if (isset($_GET['act']) && $_GET['act'] == "submit") {
         <h2> Nama Produk </h2>
         <h3>Komposisi</h3>
         <ul>
-          <li> <?php echo $row['namajenis']; ?> </li>
+          <li> <?php echo $row['komposisi']; ?> </li>
         </ul>
         <h3>Deskripsi</h3>
         <p><?php echo $row['deskripsi']; ?></p>

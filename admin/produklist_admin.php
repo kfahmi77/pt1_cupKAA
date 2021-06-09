@@ -20,7 +20,7 @@ if (!isset($_SESSION["login"])) {
   <br><br>
   <div class="grid produk-list">
     <?php
-    $query = "SELECT idproduk,namaproduk,namajenis,deskripsi,harga,gambar FROM produk JOIN jenis_produk ON produk.jenisproduk=jenis_produk.idjenis ORDER BY idproduk ASC";
+    $query = "SELECT * FROM produk ORDER BY idproduk ASC";
     $result = mysqli_query($conn, $query);
     while ($row = mysqli_fetch_assoc($result)) {
     ?>

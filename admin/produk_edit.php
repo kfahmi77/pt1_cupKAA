@@ -6,7 +6,7 @@ if (isset($_GET['idproduk'])) {
   $idproduk = ($_GET["idproduk"]);
 
   // menampilkan data dari database yang mempunyai idproduk=$id
-  $query = "SELECT idproduk,namaproduk,namajenis,deskripsi,harga,gambar FROM produk JOIN jenis_produk ON produk.jenisproduk=jenis_produk.idjenis WHERE idproduk='$idproduk'";
+  $query = "SELECT * FROM produk WHERE idproduk='$idproduk'";
   $result = mysqli_query($conn, $query);
   // jika data gagal diambil maka akan tampil error berikut
   if (!$result) {
@@ -37,17 +37,7 @@ if (isset($_GET['idproduk'])) {
       <!-- isi value ku nu geus aya dina database, meh mun teu jadi ngedit bisa langsung pencet konfirm atau update -->
       <input name="idproduk" value="<?php echo $data['idproduk']; ?>" hidden />
       <input class="input" type="text" name="namaproduk" placeholder="Nama Produk" value="<?php echo $data['namaproduk']; ?>" required>
-      <select class="input" name="jenisproduk" id="pengiriman" required>
-        <option value="<?php echo $data['idproduk']; ?>"><?php echo $data['namajenis']; ?></option>
-        <option value="">Silahkan pilih</option>
-        <?php
-        $ambildata = mysqli_query($conn, "SELECT idjenis,namajenis FROM  jenis_produk");
-        while ($row = mysqli_fetch_array($ambildata)) {
-        ?>
-          <option value="<?php echo $row['idjenis']; ?>"><?php echo $row['namajenis']; ?></option>
-        <?php }
-        ?>
-      </select>
+      <textarea class="input" type="text" placeholder="Deskripsi" required style="resize: none;" name="komposisi"><?php echo $data['komposisi']; ?></textarea>
       <textarea class="input" type="text" placeholder="Deskripsi" required style="resize: none;" name="deskripsi"><?php echo $data['deskripsi']; ?></textarea>
       <input class="input" type="text" name="harga" placeholder="Harga Produk" value="<?php echo $data['harga']; ?>" required>
       <div class="input">
