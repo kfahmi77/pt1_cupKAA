@@ -14,8 +14,8 @@ if (isset($_POST["login"])) {
       $_SESSION["user"] = $user;
       $_SESSION["login"] = true;
 
-      if (isset($_POST["rememeberme"])) {
-        setcookie("login", "tetap_ingat", time() + 30);
+      if (isset($_POST["login"])) {
+        setcookie("rememberme", "tetap_ingat", time() + 30);
       } else {
         echo "Cookie belum dibuat";
       }
@@ -33,6 +33,7 @@ if (isset($_POST["login"])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,40 +43,41 @@ if (isset($_POST["login"])) {
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <title> Cup KAA - Online Coffee Shop </title>
 </head>
+
 <body>
 
-    <div class="header flex">
-      <a href="../index.php"><img class="logo" src="../dist/img/logo-cup-kaa.png" alt=""></a>
-      <ul class="navbar flex" id="navbar">
-        <li><span class="closeNav link" onclick="closeNav()">&times;</span></li>
-        <li class="list"><a href="../index.php" class="link"> Beranda </a></li>
-        <li class="list"><a href="../produklist.php" class="link"> Produk </a></li>
-        <li class="list"><a href="../tentang.php" class="link"> Tentang </a></li>
-        <li class="list"><a href="../kontak.php" class="link"> Kontak </a></li>
-      </ul>
-      <span class="menu-small" onclick="openNav()">
-        <div class="menu-burger"></div>
-        <div class="menu-burger"></div>
-        <div class="menu-burger"></div>
+  <div class="header flex">
+    <a href="../index.php"><img class="logo" src="../dist/img/logo-cup-kaa.png" alt=""></a>
+    <ul class="navbar flex" id="navbar">
+      <li><span class="closeNav link" onclick="closeNav()">&times;</span></li>
+      <li class="list"><a href="../index.php" class="link"> Beranda </a></li>
+      <li class="list"><a href="../produklist.php" class="link"> Produk </a></li>
+      <li class="list"><a href="../tentang.php" class="link"> Tentang </a></li>
+      <li class="list"><a href="../kontak.php" class="link"> Kontak </a></li>
+    </ul>
+    <span class="menu-small" onclick="openNav()">
+      <div class="menu-burger"></div>
+      <div class="menu-burger"></div>
+      <div class="menu-burger"></div>
+    </span>
+  </div>
+
+  <div class="login flex">
+    <h1 class="title"> LOG IN </h1>
+    <form action="" class="flex form" method="post">
+      <!-- jang login, mun bisa pang nambahkeun validasi na -->
+      <input class="input" type="text" name="username" placeholder="Nama" required>
+      <input class="input" type="password" name="password" placeholder="Password" required>
+      <span>
+        <input class="input" type="checkbox" name="rememberme" value="rememberme"><label for="rememberme" style="margin-left:1rem;">Ingat Saya</label>
       </span>
-    </div>
+      <input type="submit" value="Masuk" class="link" name="login">
 
-    <div class="login flex">
-      <h1 class="title"> LOG IN </h1>
-      <form action="" class="flex form" method="post">
-        <!-- jang login, mun bisa pang nambahkeun validasi na -->
-        <input class="input" type="text" name="username" placeholder="Nama" required>
-        <input class="input" type="password" name="password" placeholder="Password" required>
-        <span>
-          <input class="input" type="checkbox" name="rememberme" value="rememberme"><label for="rememberme" style="margin-left:1rem;">Ingat Saya</label>
-        </span>
-        <input type="submit" value="Masuk" class="link" name="login">
-
-      </form>
-    </div>
+    </form>
+  </div>
 
 
 
-<?php
-require_once "../view/footer_admin.php";
-?>
+  <?php
+  require_once "../view/footer_admin.php";
+  ?>
