@@ -22,7 +22,7 @@ if ($gambar != "") {
     $angka_acak     = rand(1, 999);
     $nama_gambar_baru = $angka_acak . '-' . $gambar; //menggabungkan angka acak dengan nama file sebenarnya
     if (in_array($ekstensi, $ekstensi_diperbolehkan) === true) {
-        move_uploaded_file($file_tmp, '../dist/img/gambar_produk/' . $nama_gambar_baru); //memindah file gambar ke folder gambar
+        move_uploaded_file($file_tmp, '../dist/img/kontak/' . $nama_gambar_baru); //memindah file gambar ke folder gambar
         // jalankan query INSERT untuk menambah data ke database pastikan sesuai urutan (id tidak perlu karena dibikin otomatis)
         $query = "UPDATE kontak SET namakontak='$namakontak', tentang='$tentang',gambar='$nama_gambar_baru',instagram='$instagram',line='$line',whatsapp='$whatsapp',tipekontak='$tipekontak' WHERE idkontak='$idkontak'";
         $result = mysqli_query($conn, $query);
@@ -32,7 +32,7 @@ if ($gambar != "") {
                 " - " . mysqli_error($conn));
         } else {
             //tampil alert dan akan redirect ke halaman index.php
-            echo "<script>alert('Data berhasil diubah.');window.location='produklist_admin.php';</script>";
+            echo "<script>alert('Data berhasil diubah.');window.location='kontak_admin.php';</script>";
         }
     } else {
         //jika file ekstensi tidak jpg dan png maka alert ini yang tampil
@@ -48,6 +48,6 @@ if ($gambar != "") {
     } else {
         //tampil alert dan akan redirect ke halaman index.php
 
-        // echo "<script>alert('Data berhasil diubah.');window.location='produklist_admin.php';</script>";
+        echo "<script>alert('Data berhasil diubah.');window.location='kontak_admin.php';</script>";
     }
 }

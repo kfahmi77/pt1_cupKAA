@@ -36,15 +36,15 @@ if (!isset($_SESSION["login"])) {
 
           <div class="sosmed flex">
             <span class="icon"><img src="../dist/icon/line-ori.png" alt=""></span>
-            <a href="<?php echo $row['line']; ?>" class="link-sosmed"><?php echo $row['line']; ?></a>
+            <a class="link-sosmed"><?php echo $row['line']; ?></a>
           </div>
           <div class="sosmed flex">
             <span class="icon"><img src="../dist/icon/instagram.png" alt=""></span>
-            <a href="<?php echo $row['instagram']; ?>" class="link-sosmed"><?php echo $row['instagram']; ?></a>
+            <a href="https://www.instagram.com/<?php echo $row['instagram']; ?>" class="link-sosmed"><?php echo $row['instagram']; ?></a>
           </div>
           <div class="sosmed flex">
             <span class="icon"><img src="../dist/icon/wa-ori.png" alt=""></span>
-            <a href="<?php echo $row['whatsapp']; ?>" class="link-sosmed"><?php echo $row['whatsapp']; ?></a>
+            <a href="https://wa.me/<?php echo $row['whatsapp']; ?>" class="link-sosmed"><?php echo $row['whatsapp']; ?></a>
           </div>
           <a href="kontak_edit.php?idkontak=<?php echo $row['idkontak']; ?>" class="link" style="text-align:center;"> Edit </a>
         </div>
@@ -55,7 +55,7 @@ if (!isset($_SESSION["login"])) {
   <div class="developer">
     <h1 class="subtitle"> Developer Cup KAA </h1>
     <?php
-    $query = "SELECT* FROM kontak LIMIT 1,3";
+    $query = "SELECT* FROM kontak LIMIT 1,4";
     $result = mysqli_query($conn, $query);
     while ($row = mysqli_fetch_assoc($result)) {
     ?>

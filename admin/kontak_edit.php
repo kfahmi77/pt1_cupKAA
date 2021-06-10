@@ -6,7 +6,7 @@ if (isset($_GET['idkontak'])) {
   $idkontak = ($_GET["idkontak"]);
 
   // menampilkan data dari database yang mempunyai idkontak=$idkontak
-  $query = "SELECT idkontak,tipekontak,namakontak,namajeniskontak,tentang,line,instagram,whatsapp,gambar FROM kontak JOIN jenis_kontak ON kontak.idkontak=jenis_kontak.idjeniskontak";
+  $query = "SELECT * FROM kontak WHERE idkontak='$idkontak'";
   $result = mysqli_query($conn, $query);
   // jika data gagal diambil maka akan tampil error berikut
   if (!$result) {
@@ -17,7 +17,7 @@ if (isset($_GET['idkontak'])) {
   $data = mysqli_fetch_assoc($result);
   // apabila data tidak ada pada database maka akan dijalankan perintah ini
   if (!count($data)) {
-    echo "<script>alert('Data tidak ditemukan pada database');window.location='tentang_admin.php';</script>";
+    // echo "<script>alert('Data tidak ditemukan pada database');window.location='tentang_admin.php';</script>";
   }
 } else {
   // apabila tidak ada data GET idtentang pada akan di redirect
@@ -36,15 +36,10 @@ if (isset($_GET['idkontak'])) {
       <input type="hidden" class="input" value="<?php echo $data['idkontak']; ?>" name="idkontak">
       <!-- isi value ku nu geus aya dina database, meh mun teu jadi ngedit bisa langsung pencet konfirm atau update -->
       <select class="input" name="tipekontak" placeholder="peran" required>
-        <option value="<?php echo $data['idkontak']; ?>"> <?php echo $data['namajeniskontak']; ?> </option>
+        <option value="<?php echo $data['idkontak']; ?>"> <?php echo $data['tipekontak']; ?> </option>
         <option value="0"> Pilih </option>
-        <?php
-        $query = "SELECT* FROM jenis_kontak";
-        $result = mysqli_query($conn, $query);
-        while ($row = mysqli_fetch_assoc($result)) {
-        ?>
-          <option value="<?php echo $row['idjeniskontak']; ?>"> <?php echo $row['namajeniskontak']; ?> </option>
-        <?php } ?>
+        <option value="Developer">Developer</option>
+        <option value="Owner">Owner</option>
       </select>
       <input class="input" type="text" name="namakontak" placeholder="Nama" value="<?php echo $data['namakontak']; ?>" required>
       <textarea class="input" style="min-height:10rem; resize: none;" type="text" placeholder="Deskripsi" name="tentang" required> <?php echo $data['tentang']; ?></textarea>
@@ -57,7 +52,6 @@ if (isset($_GET['idkontak'])) {
         <i style="float: left;font-size: 11px;color: red">Abaikan jika tidak merubah gambar</i>
       </div>
       <input type="submit" value="Update" class="link">
-      <li class="list"><a href="edit_password.php?idproduk=<?php echo $row['idproduk']; ?>" class="link" style="width:100%"> Edit Password </a></li>
     </form>
   </div>
 </div>
