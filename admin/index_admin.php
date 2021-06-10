@@ -28,7 +28,7 @@ if (!isset($_SESSION["login"])) {
   <div class="background flex">
     <div class="container">
       <?php
-      $query = "SELECT idtentang,judul,deskripsi,gambar FROM tentang";
+      $query = "SELECT * FROM quote";
       $result = mysqli_query($conn, $query);
       while ($row = mysqli_fetch_assoc($result)) {
       ?>
@@ -39,7 +39,7 @@ if (!isset($_SESSION["login"])) {
           <a href="produklist_admin.php" class="link">Produk</a>
           <a href="tentang_admin.php" class="link">Tentang</a>
           <a href="kontak_admin.php" class="link">Kontak</a>
-          <a href="tentang_edit.php?idtentang=<?php echo $row['idtentang']; ?>" class="link"> Edit </a>
+          <a href="dashboard_edit.php?idquote=<?php echo $row['idquote']; ?>" class="link"> Edit </a>
           <a href="logout.php" class="link" onclick="return confirm('Anda ingin Logout?')"> Logout </a>
           <a href="edit_password.php" class="link"> Edit Password </a>
         <?php } ?>
