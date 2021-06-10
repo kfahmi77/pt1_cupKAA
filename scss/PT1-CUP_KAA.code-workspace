@@ -1,13 +1,14 @@
 {
-	"folders": [
-		{
-			"path": ".."
-		}
-	],
-	"settings": {},
-	"extensions": {
-		"recommendations": [
-			"ritwickdey.live-sass"
-		]
-	}
+  "folders": [
+    {
+      "path": ".."
+    },
+    {
+      "path": "..\\..\\static"
+    }
+  ],
+  "settings": {},
+  "extensions": {
+    "recommendations": ["ritwickdey.live-sass"]
+  }
 }

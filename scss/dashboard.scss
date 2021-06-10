@@ -1,5 +1,5 @@
 $maincolor: hsl(25, 34%, 33%);
-$bgmaincolor: hsla(24, 34%, 85%, 0.6);
+$bgmaincolor: hsla(24, 34%, 85%, 0.5);
 $mainhovercolor: hsl(25, 60%, 40%);
 $pmaincolor: white;
 $psecondcolor: black;
@@ -8,7 +8,16 @@ $psecondcolor: black;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body,
+html {
   height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
 }
 
 a,
@@ -21,6 +30,10 @@ li {
 img {
   max-width: 100%;
   max-height: 100%;
+}
+
+p {
+  line-height: 1.65;
 }
 
 .flex {
@@ -41,22 +54,50 @@ img {
 .link-dash {
   justify-content: start;
   align-items: center;
-  .list {
-    color: $pmaincolor;
-    background-color: $maincolor;
-    margin: 0.5rem;
-    padding: 1rem 0;
-    border-radius: 10px;
+}
+
+.list {
+  color: $pmaincolor;
+  background-color: $maincolor;
+  margin: 1rem;
+  padding: 1rem 0;
+  border-radius: 10px;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.header {
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 3px solid $psecondcolor;
+  .logo {
+    margin-left: 2rem;
+    max-height: 5rem;
+  }
+
+  .navbar {
+    margin-right: 1rem;
   }
 }
 
-p {
-  line-height: 1.65;
+.footer {
+  flex-shrink: 0;
+  grid-area: footer;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: $maincolor;
+
+  p {
+    margin: auto;
+    color: $pmaincolor;
+  }
 }
 
 .background {
-  background-image: url("../img/coffee-1711431_1920.jpg");
-  height: 100%;
+  height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -69,15 +110,47 @@ p {
     }
     background-color: $bgmaincolor;
     padding: 1.5rem;
-    width: 55%;
+    width: 50%;
     margin: auto;
     margin-top: 3rem;
   }
 }
 
+.menu-small {
+  flex-direction: column;
+  cursor: pointer;
+  padding: 0.25rem;
+  border: 3px solid $maincolor;
+  display: none;
+}
+
+.menu-burger {
+  width: 35px;
+  height: 5px;
+  background-color: $maincolor;
+  margin: 0.25rem;
+}
+
+.closeNav {
+  display: none;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 2rem;
+  margin-left: 50px;
+}
+
 // awal bagian screen ukuran 768px
 
 @media only screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    .logo {
+      margin: auto;
+      padding: auto;
+    }
+  }
+
   .background {
     .container {
       width: 75%;
@@ -89,10 +162,35 @@ p {
 // awal bagian screen ukuran 360px
 
 @media only screen and (max-width: 360px) {
+  .header {
+    flex-direction: row;
+    .navbar {
+      height: 100%; /* 100% Full-height */
+      width: 0; /* 0 width - change this with JavaScript */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Stay on top */
+      top: 0; /* Stay at the top */
+      right: 0;
+      background-color: hsla(0, 0%, 0%, 0.75); /* Black*/
+      overflow-x: hidden; /* Disable horizontal scroll */
+      transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+      flex-direction: column;
+      .list {
+        margin: 1.5rem auto;
+        text-align: center;
+      }
+    }
+  }
+
+  .menu-small {
+    display: flex;
+  }
+  .closeNav {
+    display: flex;
+  }
+
   .link-dash {
     justify-content: center;
     flex-direction: column;
-    .list {
-    }
   }
 }

@@ -16,7 +16,7 @@
   <div class="header flex">
     <a href="index_admin.php"><img class="logo" src="../dist/img/logo-cup-kaa.png" alt=""></a>
     <ul class="navbar flex" id="navbar">
-    <li><span class="closeNav link" onclick="closeNav()">&times;</span></li>
+      <li><span class="closeNav link" onclick="closeNav()">&times;</span></li>
       <li class="list"><a href="index_admin.php" class="link"> Beranda </a></li>
       <li class="list"><a href="produklist_admin.php" class="link"> Produk </a></li>
       <li class="list"><a href="tentang_admin.php" class="link"> Tentang </a></li>

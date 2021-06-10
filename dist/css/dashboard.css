@@ -3,7 +3,21 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body,
+html {
   height: 100%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 a,
@@ -16,6 +30,10 @@ li {
 img {
   max-width: 100%;
   max-height: 100%;
+}
+
+p {
+  line-height: 1.65;
 }
 
 .flex {
@@ -46,21 +64,58 @@ img {
           align-items: center;
 }
 
-.link-dash .list {
+.list {
   color: white;
   background-color: #714f38;
-  margin: 0.5rem;
+  margin: 1rem;
   padding: 1rem 0;
   border-radius: 10px;
 }
 
-p {
-  line-height: 1.65;
+.content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+.header {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  border-bottom: 3px solid black;
+}
+
+.header .logo {
+  margin-left: 2rem;
+  max-height: 5rem;
+}
+
+.header .navbar {
+  margin-right: 1rem;
+}
+
+.footer {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  grid-area: footer;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5rem;
+  background-color: #714f38;
+}
+
+.footer p {
+  margin: auto;
+  color: white;
 }
 
 .background {
-  background-image: url("../img/coffee-1711431_1920.jpg");
-  height: 100%;
+  height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -73,9 +128,9 @@ p {
 }
 
 .background .container {
-  background-color: rgba(230, 214, 204, 0.6);
+  background-color: rgba(230, 214, 204, 0.5);
   padding: 1.5rem;
-  width: 55%;
+  width: 50%;
   margin: auto;
   margin-top: 3rem;
 }
@@ -84,7 +139,44 @@ p {
   font-weight: lighter;
 }
 
+.menu-small {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: pointer;
+  padding: 0.25rem;
+  border: 3px solid #714f38;
+  display: none;
+}
+
+.menu-burger {
+  width: 35px;
+  height: 5px;
+  background-color: #714f38;
+  margin: 0.25rem;
+}
+
+.closeNav {
+  display: none;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 2rem;
+  margin-left: 50px;
+}
+
 @media only screen and (max-width: 768px) {
+  .header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header .logo {
+    margin: auto;
+    padding: auto;
+  }
   .background .container {
     width: 75%;
     margin-top: 2rem;
@@ -92,6 +184,50 @@ p {
 }
 
 @media only screen and (max-width: 360px) {
+  .header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .header .navbar {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header .navbar .list {
+    margin: 1.5rem auto;
+    text-align: center;
+  }
+  .menu-small {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .closeNav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   .link-dash {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
