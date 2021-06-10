@@ -38,11 +38,11 @@ if (isset($_GET['idquote'])) {
 ?>
 
 <div class="edit flex">
-    <h1 class="title"> Edit Tentang </h1>
+    <h1 class="title"> Edit Dashboard </h1>
 
     <div class="edit-container flex">
         <div class="img">
-            <img src="../dist/img/coffee-690349_1920.jpg" alt="">
+            <img src="../dist/img/coffee-1711431_1920.jpg" alt="">
         </div>
 
         <form action="proses_edit_dashboard.php" method="post" class="flex form" enctype="multipart/form-data">

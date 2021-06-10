@@ -10,7 +10,7 @@
   <title> Cup KAA - Online Coffee Shop </title>
 </head>
 <body>
-
+<span style="flex: 1 0 auto;">
     <div class="header flex">
       <a href="index.php"><img class="logo" src="dist/img/logo-cup-kaa.png" alt=""></a>
       <ul class="navbar flex" id="navbar">

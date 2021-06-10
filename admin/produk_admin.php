@@ -26,7 +26,7 @@ if (!isset($_SESSION["login"])) {
         <img src="../dist/img/gambar_produk/<?php echo $row['gambar']; ?>" alt="" class="thumbnail">
       </div>
       <div class="desc card">
-        <h2> Nama Produk </h2>
+        <h2> <?php echo $row['namaproduk']; ?></h2>
         <h3>Komposisi</h3>
         <ul>
           <li> <?php echo $row['komposisi']; ?> </li>

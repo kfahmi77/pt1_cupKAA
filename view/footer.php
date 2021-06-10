@@ -1,7 +1,8 @@
+  </span>
   <div class="footer flex">
-    <p> Footer </p>
+  <p> &copy; Kopi Abah Ambu - BETA Telkom (Gaaf - KF) 2021 </p>
   </div>
-
+  
   <script>
     function review(){
       document.getElementById("review-form").style.display="flex";

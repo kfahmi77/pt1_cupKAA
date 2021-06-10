@@ -12,7 +12,7 @@
 </head>
 
 <body>
-
+  <span style="flex:1 0 auto;">
   <div class="header flex">
     <a href="index_admin.php"><img class="logo" src="../dist/img/logo-cup-kaa.png" alt=""></a>
     <ul class="navbar flex" id="navbar">
@@ -22,6 +22,7 @@
       <li class="list"><a href="tentang_admin.php" class="link"> Tentang </a></li>
       <li class="list"><a href="kontak_admin.php" class="link"> Kontak </a></li>
       <li class="list"><a href="logout.php" class="link" onclick="return confirm('Anda ingin Logout?')"> Logout </a></li>   
+      <li class="list"><a href="edit_password.php?idproduk=<?php echo $row['idproduk']; ?>" class="link" style="width:100%"> Edit Password </a></li>    
     </ul>
     <span class="menu-small" onclick="openNav()">
         <div class="menu-burger"></div>
